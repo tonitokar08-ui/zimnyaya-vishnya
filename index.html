@@ -1,53 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#160810">
-<meta name="description" content="Зимняя Вишня — пространство музыки, акустики и технического творчества.">
-<title>Зимняя Вишня — пространство звука</title>
+<meta name="description" content="Зимняя Вишня — акустика, музыка и техническое творчество.">
+<title>Зимняя Вишня | Пространство звука</title>
 <style>
 :root{--bg:#10070d;--panel:#21101a;--wine:#a62b52;--pink:#ff9ab8;--text:#fff1f5;--muted:#cbb5bf;--line:#51253a}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at 80% 0%,#59172f 0,transparent 38%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
-a{color:inherit}
-.wrap{width:min(1050px,calc(100% - 32px));margin:auto}
-header{padding:20px 0;border-bottom:1px solid var(--line);background:#10070de8}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+body{margin:0;background:radial-gradient(ellipse at 80% 0%,#59172f,transparent 38%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+.wrap{width:min(1080px,calc(100% - 32px));margin:auto}
+header{padding:18px 0;border-bottom:1px solid var(--line);background:#10070df0}
+nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
 .logo{font-weight:900;letter-spacing:2px;text-decoration:none}
-.logo span{color:var(--pink)}
-.links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
-.links a{color:var(--muted);text-decoration:none}
+.logo span,h1 span{color:var(--pink)}
+.links{display:flex;gap:14px;flex-wrap:wrap}
+.links a{color:var(--muted);text-decoration:none;font-size:14px}
 .links a:hover{color:white}
-.hero{padding:85px 0 65px}
-.tag{display:inline-block;border:1px solid #a62b52;border-radius:30px;padding:6px 13px;color:var(--pink);font-size:12px;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:clamp(48px,10vw,100px);line-height:.98;letter-spacing:-4px;margin:24px 0}
-h1 span{display:block;color:var(--pink)}
-.lead{font-size:clamp(18px,3vw,22px);color:#e2cbd4;max-width:680px}
-.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:bold;border:1px solid var(--line)}
+.hero{padding:78px 0 55px}
+.tag,.label{color:var(--pink);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:bold}
+h1{font-size:clamp(48px,10vw,96px);line-height:.98;letter-spacing:-3px;margin:22px 0}
+h1 span{display:block}
+.lead{font-size:clamp(18px,3vw,22px);color:#e2cbd4;max-width:700px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;padding:11px 17px;border-radius:11px;text-decoration:none;font-weight:bold;border:1px solid var(--line)}
 .primary{background:linear-gradient(135deg,#b6325c,#761638);border-color:#c94d75}
 .secondary{background:#ffffff08}
-.stats,.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
-.stat,.card,.person{padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#28131e,#180b12)}
-.stat strong{display:block;color:var(--pink);font-size:18px}
-.stat span,.card p,.person p{color:var(--muted);font-size:14px}
-section{padding:55px 0}
-.kicker{font-size:12px;color:var(--pink);letter-spacing:3px;text-transform:uppercase;font-weight:bold}
-h2{font-size:clamp(30px,6vw,48px);line-height:1.15;letter-spacing:-1px;margin:10px 0 16px}
-.intro{color:var(--muted);max-width:720px}
-.card .emoji{font-size:30px}
-.card h3{margin:10px 0 4px}
-.card p{margin-bottom:0}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
-.panel{padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}
-.panel p{color:var(--muted)}
-.quote{font-size:clamp(23px,4vw,35px);font-weight:bold;line-height:1.35}
-.people{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
-.person strong{display:block}
-footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-@media(max-width:700px){.hero{padding:55px 0 35px}.stats,.cards,.split,.people{grid-template-columns:1fr}.links{gap:11px}.stat{padding:17px}section{padding:40px 0}h1{letter-spacing:-2px}}
+.stats,.catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.stat,.card,.panel{padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#28131e,#180b12)}
+.stat strong{display:block;color:var(--pink)}
+.stat small{color:var(--muted)}
+section{padding:48px 0}
+h2{font-size:clamp(30px,6vw,46px);line-height:1.15;letter-spacing:-1px;margin:8px 0 14px}
+.intro,.card p,.panel p{color:var(--muted)}
+.card .emoji{font-size:32px}
+.card h3{margin:9px 0 5px}
+.card p{font-size:14px;margin-bottom:0}
+.spec{border-top:1px solid var(--line);padding-top:10px;margin-top:14px;font-size:13px;color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+.person{padding:20px;border:1px solid var(--line);border-radius:15px;background:#ffffff05}
+.person p{margin-bottom:0;color:var(--muted)}
+.contact{background:linear-gradient(135deg,#421328,#1a0b13);border:1px solid #78304b;border-radius:20px;padding:26px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:13px}
+@media(max-width:700px){.hero{padding:52px 0 35px}.stats,.catalog,.split,.people{grid-template-columns:1fr}.links{gap:10px}section{padding:36px 0}h1{letter-spacing:-2px}}
 </style>
 </head>
 <body>
@@ -57,77 +56,112 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <a class="logo" href="#home">ЗИМНЯЯ <span>ВИШНЯ</span></a>
 <div class="links">
 <a href="#about">О проекте</a>
-<a href="#sound">Звук</a>
+<a href="#catalog">Оборудование</a>
 <a href="#space">Пространство</a>
-<a href="#team">Люди</a>
+<a href="#contacts">Контакты</a>
 </div>
 </nav>
 </div>
 </header>
+
 <main id="home">
 <section class="hero">
 <div class="wrap">
 <div class="tag">Музыка · Техника · Атмосфера</div>
 <h1>Зимняя <span>Вишня.</span></h1>
-<p class="lead">Личное пространство, где музыка встречается с техникой, акустика наполняет помещение звуком, а идеи превращаются в реальные проекты.</p>
+<p class="lead">Личное пространство звука, акустики и технического творчества. Здесь оборудование становится частью атмосферы, а интерес к технике превращается в собственный проект.</p>
 <div class="buttons">
-<a class="btn primary" href="#sound">Исследовать звук ↓</a>
-<a class="btn secondary" href="#about">Наша история</a>
+<a class="btn primary" href="#catalog">Каталог оборудования ↓</a>
+<a class="btn secondary" href="#about">История проекта</a>
 </div>
 <div class="stats">
-<div class="stat"><strong>Акустика</strong><span>Колонки и сабвуферы</span></div>
-<div class="stat"><strong>Электроника</strong><span>Усилители и подключения</span></div>
-<div class="stat"><strong>Творчество</strong><span>Музыка и эксперименты</span></div>
+<div class="stat"><strong>Акустика</strong><small>Колонки и сабвуферы</small></div>
+<div class="stat"><strong>Электроника</strong><small>Усиление и коммутация</small></div>
+<div class="stat"><strong>Творчество</strong><small>Музыка, кино и эксперименты</small></div>
 </div>
 </div>
 </section>
+
 <section id="about">
 <div class="wrap">
-<div class="kicker">О проекте</div>
+<div class="label">О проекте</div>
 <h2>Больше, чем просто звук.</h2>
-<p class="intro">«Зимняя Вишня» — личный проект о музыке, технике и создании своего пространства. Здесь важны не только мощность и громкость, но и характер звучания, грамотная настройка и удовольствие от процесса.</p>
-<p class="intro">Это место для технических экспериментов, фильмов, игр, музыки и идей, которые хочется воплощать своими руками.</p>
+<p class="intro">«Зимняя Вишня» — проект о музыке, акустике и создании собственного пространства. В центре внимания — оборудование, особенности звучания, настройка систем и технические эксперименты.</p>
+<p class="intro">Это место для музыки, фильмов, игр и новых идей. Проект развивается постепенно: каждый компонент и каждое улучшение становятся частью общей истории.</p>
 </div>
 </section>
-<section id="sound">
+
+<section id="catalog">
 <div class="wrap">
-<div class="kicker">Звук и оборудование</div>
-<h2>Каждый элемент имеет значение.</h2>
-<p class="intro">От источника сигнала до динамика — результат зависит от всей системы.</p>
-<div class="cards">
-<article class="card"><div class="emoji">🔊</div><h3>Акустические системы</h3><p>Колонки, сабвуферы и сателлиты. Подбор компонентов, настройка и характер звучания.</p></article>
-<article class="card"><div class="emoji">🎚️</div><h3>Усилители и кабели</h3><p>Подключения, входы и выходы, аккуратная коммутация и внимательное отношение к технике.</p></article>
-<article class="card"><div class="emoji">🎶</div><h3>Музыка и кино</h3><p>Атмосфера для прослушивания музыки, игр и просмотра фильмов на большом экране.</p></article>
+<div class="label">Каталог</div>
+<h2>Оборудование проекта</h2>
+<p class="intro">Знакомство с техникой, которая используется или обсуждается в проекте. Неуточнённые характеристики намеренно не указаны.</p>
+<div class="catalog">
+<article class="card">
+<div class="emoji">🔊</div>
+<h3>EUROSOUND FOCUS 1100A</h3>
+<p>Активный сабвуфер. Часть акустического оборудования пространства «Зимняя Вишня».</p>
+<div class="spec">Тип: активный сабвуфер<br>Другие параметры: уточняются по маркировке устройства</div>
+</article>
+<article class="card">
+<div class="emoji">🎵</div>
+<h3>Radiotehnika S-90</h3>
+<p>Акустические системы семейства S-90. Используются в проекте для работы со звуком.</p>
+<div class="spec">Семейство: S-90<br>Точная модификация конкретной пары: уточняется</div>
+</article>
+<article class="card">
+<div class="emoji">🎚️</div>
+<h3>Invotone SP 106M</h3>
+<p>Оборудование для подключения и работы с аудиосигналом в акустической системе.</p>
+<div class="spec">Модель: SP 106M<br>Подключения и режимы следует сверять с маркировкой устройства</div>
+</article>
 </div>
 </div>
 </section>
+
 <section id="space">
 <div class="wrap split">
 <div>
-<div class="kicker">Наше пространство</div>
+<div class="label">Пространство</div>
 <h2>Свой угол для больших идей.</h2>
-<p class="intro">Цокольный этаж постепенно становится местом для музыки, кино, встреч и экспериментов с акустикой. Каждое улучшение — часть общей истории: от расстановки колонок до настройки звучания.</p>
+<p class="intro">Цокольный этаж постепенно становится местом для музыки, кино, встреч и экспериментов с акустикой.</p>
+<p class="intro">Важны не только громкость и бас, но и удобная расстановка оборудования, надёжные подключения и внимательное отношение к технике.</p>
 </div>
 <div class="panel">
-<div class="kicker">Философия проекта</div>
-<p class="quote">«Не просто включить звук — создать ощущение, которое хочется запомнить».</p>
-<p>Музыка. Техника. Пространство.</p>
+<div class="label">Философия проекта</div>
+<h2>Звук, который создаёт атмосферу.</h2>
+<p>Музыка. Техника. Пространство. Всё начинается с интереса и желания создавать что-то своё.</p>
 </div>
 </div>
 </section>
+
 <section id="team">
 <div class="wrap">
-<div class="kicker">Люди проекта</div>
+<div class="label">Люди проекта</div>
 <h2>За идеей стоят люди.</h2>
-<p class="intro">Проект растёт благодаря интересу к технике, поддержке близких и желанию создавать что-то своё.</p>
 <div class="people">
 <div class="person"><strong>Токарь Антон Александрович</strong><p>Автор и создатель проекта «Зимняя Вишня».</p></div>
 <div class="person"><strong>Токарь Александр Анатольевич</strong><p>Поддержка проекта и семейная история пространства.</p></div>
 </div>
 </div>
 </section>
+
+<section id="contacts">
+<div class="wrap">
+<div class="contact">
+<div class="label">Контакты</div>
+<h2>«Зимняя Вишня»</h2>
+<p>Местоположение: Алексеевка.</p>
+<p class="intro">Личные контактные данные и точный адрес не публикуются на этой странице.</p>
+</div>
+</div>
+</section>
 </main>
-<footer><div class="wrap">© <span id="year">2026</span> «Зимняя Вишня» · Создано с любовью к музыке и технике.</div></footer>
+
+<footer>
+<div class="wrap">© <span id="year">2026</span> «Зимняя Вишня» · Пространство музыки и техники.</div>
+</footer>
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
+
