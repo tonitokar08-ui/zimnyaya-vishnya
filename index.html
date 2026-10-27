@@ -540,6 +540,131 @@ footer strong { color: var(--white); }
 </section>
 </main>
 
+<section id="e-tickets" style="padding:70px 0;background:#10070c;color:#fff5f8;font-family:Arial,sans-serif">
+  <div style="width:min(760px,90%);margin:auto">
+    <p style="color:#f09ab8;letter-spacing:4px;font-size:12px">ЗИМНЯЯ ВИШНЯ · E-TICKET</p>
+    <h2 style="font-size:clamp(32px,6vw,48px);line-height:1.15">Твой билет в мир звука 🍒</h2>
+    <p style="color:#c5aab6;line-height:1.8">
+      Создай электронный макет билета для посещения «Зимней Вишни».
+      Стоимость одного билета — 99 ₽.
+    </p>
+
+    <form id="ticketForm" style="display:grid;gap:16px;margin-top:28px">
+      <label>
+        Имя посетителя
+        <input id="ticketName" required maxlength="60" placeholder="Как к тебе обращаться?"
+          style="display:block;width:100%;padding:14px;margin-top:7px;border-radius:8px;border:1px solid #633047;background:#1d0c16;color:white;font-size:16px">
+      </label>
+      <label>
+        Количество билетов
+        <select id="ticketQty" style="display:block;width:100%;padding:14px;margin-top:7px;border-radius:8px;border:1px solid #633047;background:#1d0c16;color:white;font-size:16px">
+          <option value="1">1 билет — 99 ₽</option>
+          <option value="2">2 билета — 198 ₽</option>
+          <option value="3">3 билета — 297 ₽</option>
+          <option value="4">4 билета — 396 ₽</option>
+          <option value="5">5 билетов — 495 ₽</option>
+        </select>
+      </label>
+      <button type="submit" style="padding:15px;border:0;border-radius:8px;background:#a52b52;color:white;font-size:16px;font-weight:bold;cursor:pointer">
+        Создать электронный билет
+      </button>
+    </form>
+
+    <div id="ticketResult" hidden style="margin-top:28px">
+      <div id="ticketCard" style="background:linear-gradient(135deg,#351326,#1d0c16);border:1px solid #f09ab8;border-radius:18px;overflow:hidden">
+        <div style="padding:24px;border-bottom:1px dashed #a65b7b">
+          <p style="color:#f09ab8;letter-spacing:3px;font-size:11px">ELECTRONIC TICKET</p>
+          <h3 style="font-size:29px;margin:8px 0">🍒 Зимняя Вишня</h3>
+          <p style="color:#c5aab6;margin:0">Звук · Кино · Игры</p>
+        </div>
+        <div style="padding:24px">
+          <p style="color:#c5aab6;margin-bottom:4px">Посетитель</p>
+          <div id="outName" style="font-size:22px;font-weight:bold;overflow-wrap:anywhere"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px">
+            <div>
+              <p style="color:#c5aab6;font-size:12px;margin-bottom:4px">КОЛИЧЕСТВО</p>
+              <strong id="outQty"></strong>
+            </div>
+            <div>
+              <p style="color:#c5aab6;font-size:12px;margin-bottom:4px">СТОИМОСТЬ</p>
+              <strong id="outPrice" style="font-size:23px;color:#f09ab8"></strong>
+            </div>
+          </div>
+          <div style="margin-top:24px;padding-top:18px;border-top:1px solid #633047">
+            <p style="color:#c5aab6;font-size:12px;margin-bottom:4px">НОМЕР МАКЕТА БИЛЕТА</p>
+            <strong id="outCode" style="font-size:20px;letter-spacing:2px;overflow-wrap:anywhere"></strong>
+          </div>
+          <p style="color:#c5aab6;font-size:12px;margin-top:20px">
+            Этот макет не подтверждает оплату или бронирование.
+            Для действительного входного билета требуется подтверждение организатора.
+          </p>
+        </div>
+      </div>
+      <button id="printTicket" type="button" style="width:100%;margin-top:15px;padding:14px;border:1px solid #f09ab8;border-radius:8px;background:transparent;color:white;font-weight:bold;font-size:16px">
+        🖨️ Распечатать / сохранить в PDF
+      </button>
+      <p style="color:#c5aab6;font-size:13px">
+        При выборе печати на телефоне выбери «Сохранить как PDF», если эта опция доступна.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+@media print {
+  body * { visibility:hidden !important; }
+  #ticketResult, #ticketResult * { visibility:visible !important; }
+  #ticketResult {
+    display:block !important;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    margin:0 !important;
+  }
+  #ticketCard {
+    background:white !important;
+    color:#24101b !important;
+    border:2px solid #a52b52 !important;
+    print-color-adjust:exact;
+    -webkit-print-color-adjust:exact;
+  }
+  #ticketCard p { color:#59434e !important; }
+  #printTicket, #ticketResult > p { display:none !important; }
+}
+</style>
+
+<script>
+(function () {
+  const form = document.getElementById("ticketForm");
+  const result = document.getElementById("ticketResult");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("ticketName").value.trim();
+    const qty = Number(document.getElementById("ticketQty").value);
+
+    if (!name || qty < 1 || qty > 5) return;
+
+    const code = "ZV-" + Date.now().toString(36).toUpperCase()
+      + "-" + Math.random().toString(36).slice(2, 6).toUpperCase();
+
+    document.getElementById("outName").textContent = name;
+    document.getElementById("outQty").textContent = qty + (qty === 1 ? " билет" : " билета");
+    document.getElementById("outPrice").textContent = (qty * 99) + " ₽";
+    document.getElementById("outCode").textContent = code;
+
+    result.hidden = false;
+    result.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  document.getElementById("printTicket").addEventListener("click", function () {
+    window.print();
+  });
+})();
+</script>
+
 <footer>
   <div class="container footer-inner">
     <div><strong>🍒 Зимняя Вишня</strong> — территория звука, кино и игр.</div>
