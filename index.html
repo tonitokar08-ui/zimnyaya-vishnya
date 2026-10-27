@@ -1,281 +1,190 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#16070e">
-<meta name="description" content="Зимняя Вишня — личное пространство звука, кино и игр. Мощная акустика, проектор, большой экран и PlayStation 4 Pro.">
+<meta name="description" content="Зимняя Вишня — пространство звука, кино и игр в Алексеевке.">
 <title>Зимняя Вишня — территория звука и кино</title>
 
 <style>
 :root {
   --bg: #10070c;
-  --panel: #1d0c16;
-  --panel2: #28101e;
+  --panel: #21101a;
   --red: #a52b52;
   --pink: #f09ab8;
   --white: #fff5f8;
   --muted: #c5aab6;
-  --line: rgba(255,255,255,.12);
+  --line: rgba(255,255,255,.13);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  color: var(--white);
   background: var(--bg);
+  color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.7;
 }
 a { color: inherit; text-decoration: none; }
-button, a { -webkit-tap-highlight-color: transparent; }
-.container { width: min(1120px, 90%); margin: auto; }
+.container { width: min(1100px, 90%); margin: auto; }
 header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(16,7,12,.94);
-  backdrop-filter: blur(14px);
+  background: rgba(16,7,12,.96);
   border-bottom: 1px solid var(--line);
 }
 .nav {
-  min-height: 76px;
+  min-height: 72px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 12px 0;
 }
-.logo {
-  font-size: 21px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-.logo span { color: var(--pink); }
-nav { display: flex; flex-wrap: wrap; gap: 22px; }
+.logo { font-weight: 900; font-size: 20px; }
+.pink { color: var(--pink); }
+nav { display: flex; gap: 16px; flex-wrap: wrap; }
 nav a { color: var(--muted); font-size: 14px; }
 nav a:hover { color: var(--pink); }
 
 .hero {
-  min-height: 680px;
+  min-height: 570px;
   display: flex;
   align-items: center;
-  position: relative;
-  overflow: hidden;
   background:
-    radial-gradient(ellipse at 78% 40%, rgba(165,43,82,.32), transparent 43%),
-    radial-gradient(ellipse at 15% 90%, rgba(90,20,51,.25), transparent 45%),
-    linear-gradient(145deg,#10070c,#210b18 65%,#10070c);
-}
-.hero::after {
-  content: "ЗВУК • КИНО • ИГРЫ";
-  position: absolute;
-  right: -25px;
-  bottom: 20px;
-  font-size: clamp(30px,7vw,85px);
-  font-weight: 900;
-  letter-spacing: 5px;
-  white-space: nowrap;
-  color: rgba(255,255,255,.025);
-  pointer-events: none;
+    radial-gradient(ellipse at 80% 30%,#64203d 0%,transparent 42%),
+    linear-gradient(145deg,#10070c,#210b18);
+  padding: 75px 0;
 }
 .eyebrow {
   color: var(--pink);
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   font-size: 12px;
   font-weight: bold;
 }
 h1 {
-  max-width: 850px;
-  font-size: clamp(43px,8vw,88px);
-  line-height: 1.02;
-  letter-spacing: -3px;
-  margin: 22px 0;
+  font-size: clamp(42px,8vw,82px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 20px 0;
 }
-h1 span {
-  color: var(--pink);
-  display: block;
-}
-.hero p {
-  max-width: 680px;
-  color: var(--muted);
-  font-size: clamp(16px,2vw,19px);
-}
-.actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+h1 span { display: block; color: var(--pink); }
+.hero p, .intro { color: var(--muted); max-width: 720px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 .btn {
   display: inline-block;
-  padding: 13px 22px;
-  border-radius: 8px;
   background: var(--red);
   color: white;
-  font-weight: bold;
+  padding: 13px 20px;
   border: 1px solid var(--red);
-  transition: .2s;
-}
-.btn:hover { transform: translateY(-2px); background: #bd3965; }
-.btn.secondary { background: transparent; border-color: var(--line); }
-
-section { padding: 90px 0; scroll-margin-top: 80px; }
-.section-head { max-width: 760px; margin-bottom: 36px; }
-h2 {
-  font-size: clamp(30px,5vw,48px);
-  line-height: 1.15;
-  margin: 10px 0 18px;
-  letter-spacing: -1px;
-}
-.section-head p, .copy { color: var(--muted); }
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 28px;
-  align-items: stretch;
-}
-.panel {
-  padding: clamp(23px,4vw,38px);
-  background: linear-gradient(145deg,var(--panel2),var(--panel));
-  border: 1px solid var(--line);
-  border-radius: 18px;
-}
-.panel h3 { margin-top: 0; font-size: 23px; }
-.quote {
-  font-size: clamp(22px,3vw,31px);
+  border-radius: 8px;
   font-weight: bold;
-  line-height: 1.4;
 }
-.quote span { color: var(--pink); }
-.facts { display: grid; gap: 12px; }
-.fact {
-  padding: 16px;
-  border-radius: 10px;
-  background: rgba(255,255,255,.035);
-  border: 1px solid var(--line);
-}
-.fact strong { display: block; color: var(--pink); font-size: 18px; }
-.fact small { color: var(--muted); font-size: 14px; }
+.btn.secondary { background: transparent; border-color: var(--line); }
+.btn:hover { background: #bd3965; }
 
-.cinema {
-  background:
-    radial-gradient(ellipse at 50% 0%,rgba(165,43,82,.18),transparent 65%),
-    #170912;
+section { padding: 75px 0; scroll-margin-top: 85px; }
+.section-head { max-width: 760px; margin-bottom: 30px; }
+h2 {
+  font-size: clamp(30px,5vw,46px);
+  line-height: 1.15;
+  margin: 12px 0 18px;
 }
-.feature-grid, .gear-grid {
+h3 { line-height: 1.3; }
+.panel, .card {
+  background: linear-gradient(145deg,#28101e,#1a0b13);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 25px;
+}
+.grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 18px;
 }
-.feature, .gear {
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.035);
-  border-radius: 16px;
-  padding: 25px;
-  transition: .25s;
-}
-.feature:hover, .gear:hover {
-  transform: translateY(-4px);
-  border-color: rgba(240,154,184,.5);
-}
-.symbol {
-  font-size: 35px;
-  display: block;
-  margin-bottom: 13px;
-}
-.feature h3, .gear h3 { font-size: 21px; line-height: 1.3; }
-.feature p, .gear p { color: var(--muted); font-size: 15px; }
-.tag {
-  display: inline-block;
-  font-size: 11px;
-  color: var(--pink);
-  border: 1px solid rgba(240,154,184,.3);
-  border-radius: 30px;
-  padding: 4px 10px;
-  letter-spacing: 1px;
-}
-.screen {
-  margin-top: 28px;
-  padding: clamp(25px,5vw,50px);
-  text-align: center;
-  border: 1px solid rgba(240,154,184,.25);
-  border-radius: 18px;
-  background: linear-gradient(135deg,rgba(165,43,82,.2),rgba(255,255,255,.025));
-}
-.screen-visual {
-  width: min(600px,100%);
-  aspect-ratio: 16/9;
-  margin: 24px auto;
-  border: 5px solid #3b2732;
-  border-radius: 5px;
-  background:
-    radial-gradient(circle at 70% 30%,rgba(240,154,184,.7),transparent 20%),
-    linear-gradient(135deg,#6b2445,#251128 45%,#100b19);
-  box-shadow: 0 0 45px rgba(165,43,82,.2);
+.two-col {
   display: grid;
-  place-items: center;
-}
-.screen-visual span {
-  font-size: clamp(23px,5vw,44px);
-  font-weight: 900;
-  text-shadow: 0 4px 20px #000;
-  letter-spacing: 2px;
-}
-.screen-note { color: var(--muted); font-size: 14px; }
-
-.gear { display: flex; flex-direction: column; }
-.gear .number { color: var(--pink); font-size: 13px; letter-spacing: 2px; }
-.gear p { flex: 1; }
-.gear .kind { margin-top: 10px; }
-
-.atmosphere-grid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
 }
-.atmosphere-card {
-  min-height: 220px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  border-radius: 16px;
+.muted { color: var(--muted); }
+.stat {
+  padding: 14px;
+  background: rgba(255,255,255,.035);
   border: 1px solid var(--line);
-  background: linear-gradient(145deg,#351326,#170912);
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
-.atmosphere-card h3 { font-size: 24px; margin-bottom: 5px; }
-.atmosphere-card p { color: var(--muted); margin-bottom: 0; }
-
-.closing {
+.stat strong { display: block; color: var(--pink); font-size: 20px; }
+.symbol { font-size: 32px; }
+.card p { color: var(--muted); font-size: 15px; }
+.tag {
+  display: inline-block;
+  border: 1px solid #78405a;
+  border-radius: 20px;
+  padding: 4px 10px;
+  color: var(--pink);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.dark-section {
+  background: linear-gradient(135deg,#210b18,#170912);
+}
+.screen {
+  border: 1px solid #633047;
+  border-radius: 16px;
+  padding: 22px;
   text-align: center;
-  background: linear-gradient(135deg,#2a0d1b,#10070c 75%);
+  margin-bottom: 22px;
 }
-.closing .section-head { margin: 0 auto 25px; }
+.screen-visual {
+  width: min(650px,100%);
+  aspect-ratio: 16/9;
+  margin: 22px auto;
+  display: grid;
+  place-items: center;
+  border: 5px solid #49313d;
+  background:
+    radial-gradient(circle at 70% 30%,#b45a83,transparent 25%),
+    linear-gradient(135deg,#6b2445,#251128 55%,#100b19);
+  box-shadow: 0 0 35px #a52b5233;
+}
+.screen-visual span {
+  font-size: clamp(22px,5vw,40px);
+  font-weight: 900;
+  line-height: 1.2;
+}
+.booking {
+  background: linear-gradient(135deg,#351326,#180a12);
+  border: 1px solid #78405a;
+  border-radius: 18px;
+  padding: clamp(22px,5vw,38px);
+}
+.price { font-size: clamp(48px,8vw,68px); font-weight: 900; }
 footer {
   border-top: 1px solid var(--line);
-  padding: 28px 0;
+  padding: 25px 0;
   color: var(--muted);
   font-size: 13px;
 }
 .footer-inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 15px;
+  gap: 12px;
   flex-wrap: wrap;
 }
-footer strong { color: var(--white); }
-
-@media (max-width: 760px) {
-  .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; }
-  nav { gap: 10px 17px; }
-  .hero { min-height: 590px; }
-  h1 { letter-spacing: -1.5px; }
-  section { padding: 65px 0; }
-  .about-grid, .feature-grid, .gear-grid, .atmosphere-grid {
-    grid-template-columns: 1fr;
-  }
+@media(max-width:760px) {
+  .nav { align-items: flex-start; flex-direction: column; }
+  .grid, .two-col { grid-template-columns: 1fr; }
+  .hero { min-height: 0; }
+  section { padding: 55px 0; }
 }
-@media (prefers-reduced-motion: reduce) {
+@media(prefers-reduced-motion:reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
 }
 </style>
 </head>
@@ -283,12 +192,12 @@ footer strong { color: var(--white); }
 <body>
 <header>
   <div class="container nav">
-    <a class="logo" href="#home">🍒 ЗИМНЯЯ <span>ВИШНЯ</span></a>
-    <nav aria-label="Основная навигация">
-      <a href="#about">О пространстве</a>
+    <a class="logo" href="#home">🍒 ЗИМНЯЯ <span class="pink">ВИШНЯ</span></a>
+    <nav aria-label="Навигация">
+      <a href="#about">О проекте</a>
       <a href="#cinema">Кино и игры</a>
       <a href="#sound">Акустика</a>
-      <a href="#atmosphere">Атмосфера</a>
+      <a href="#visit">Посещение</a>
     </nav>
   </div>
 </header>
@@ -297,17 +206,15 @@ footer strong { color: var(--white); }
 <section class="hero" id="home">
   <div class="container">
     <div class="eyebrow">Личное пространство · Алексеевка</div>
-    <h1>Здесь звук<br>становится <span>атмосферой.</span></h1>
+    <h1>Здесь звук становится <span>атмосферой.</span></h1>
     <p>
-      «Зимняя Вишня» — особое пространство, созданное вокруг
-      любви к музыке, кино, играм и настоящей технике.
-      Большой экран, PlayStation 4 Pro и мощная акустическая система
-      объединяются здесь в один мир, где можно погрузиться в происходящее
-      и забыть о суете за пределами комнаты.
+      «Зимняя Вишня» — пространство, созданное вокруг любви к музыке,
+      кино, играм и настоящей технике. Большой экран, PlayStation 4 Pro
+      и мощная акустика объединяются в один мир звука и впечатлений.
     </p>
     <div class="actions">
       <a class="btn" href="#cinema">Исследовать пространство ↓</a>
-      <a class="btn secondary" href="#sound">Знакомство с техникой</a>
+      <a class="btn secondary" href="#sound">Наша техника</a>
     </div>
   </div>
 </section>
@@ -317,105 +224,67 @@ footer strong { color: var(--white); }
     <div class="section-head">
       <div class="eyebrow">Больше, чем комната</div>
       <h2>Место, где техника оживает в деталях</h2>
-      <p>
-        У каждого пространства свой характер. У «Зимней Вишни» он
-        складывается из мощного звучания, большого изображения,
-        любимых игр и особой атмосферы цокольного этажа.
+      <p class="intro">
+        У «Зимней Вишни» свой характер: мощное звучание, большое
+        изображение, любимые игры и особая атмосфера цокольного этажа.
       </p>
     </div>
 
-    <div class="about-grid">
+    <div class="two-col">
       <div class="panel">
-        <div class="quote">
-          Не просто включить музыку.<br>
-          <span>Почувствовать её.</span>
-        </div>
-        <p class="copy">
+        <h3>Не просто включить музыку. <span class="pink">Почувствовать её.</span></h3>
+        <p class="muted">
           Здесь важна каждая составляющая: источник сигнала, усиление,
-          акустика и само помещение. Кино должно захватывать изображением,
-          игры — погружать в происходящее, а музыка — наполнять пространство
-          характером и настроением.
-        </p>
-        <p class="copy">
-          «Зимняя Вишня» — личный проект, в котором увлечение техникой
-          превращается в собственный мир звука и впечатлений.
+          акустика и само помещение. Кино захватывает изображением,
+          игры погружают в происходящее, а музыка наполняет пространство
+          настроением.
         </p>
       </div>
-
-      <div class="panel facts">
-        <div class="fact">
-          <strong>≈ 130 м²</strong>
-          <small>Площадь цокольного этажа</small>
-        </div>
-        <div class="fact">
-          <strong>Большой экран</strong>
-          <small>Проектор для просмотра на стене</small>
-        </div>
-        <div class="fact">
-          <strong>Игровая зона</strong>
-          <small>PlayStation 4 Pro</small>
-        </div>
-        <div class="fact">
-          <strong>Акустический характер</strong>
-          <small>Плотное помещение и отдельная акустическая система</small>
-        </div>
+      <div class="panel">
+        <div class="stat"><strong>≈ 130 м²</strong>Площадь цокольного этажа</div>
+        <div class="stat"><strong>Большой экран</strong>Проекция на стену</div>
+        <div class="stat"><strong>PlayStation 4 Pro</strong>Игровая зона</div>
+        <div class="stat"><strong>Мощная акустика</strong>Отдельная звуковая система</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cinema" id="cinema">
+<section class="dark-section" id="cinema">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Большое изображение · Полное погружение</div>
+      <div class="eyebrow">Большое изображение</div>
       <h2>Кино и игры — на большом масштабе</h2>
-      <p>
-        Проектор выводит изображение на большую стену, превращая её
-        в центр просмотра. Здесь можно устроить вечер кино, погрузиться
-        в игровой мир или просто включить любимый контент и наслаждаться
-        атмосферой собственного пространства.
+      <p class="intro">
+        Проектор выводит изображение на стену, превращая её в центр
+        просмотра. Здесь можно погрузиться в фильм, открыть игровой мир
+        или включить любимый контент.
       </p>
     </div>
 
     <div class="screen">
       <span class="tag">ПРОЕКТОР · БОЛЬШОЙ ЭКРАН</span>
-      <div class="screen-visual" role="img" aria-label="Стилизованная иллюстрация большого экрана с кинематографическим свечением">
+      <div class="screen-visual" role="img" aria-label="Стилизованная иллюстрация экрана">
         <span>ТВОЙ МИР.<br>БОЛЬШОЙ ЭКРАН.</span>
       </div>
-      <h3>Изображение на всю стену — впечатления без границ</h3>
-      <p class="screen-note">
-        Иллюстрация концепции экрана. Реальная проекция зависит от установки
-        проектора, расстояния до стены и условий освещения.
-      </p>
+      <p class="muted">Иллюстрация концепции экрана, а не фотография реальной проекции.</p>
     </div>
 
-    <div class="feature-grid" style="margin-top:22px">
-      <article class="feature">
-        <span class="symbol">🎬</span>
+    <div class="grid">
+      <article class="card">
+        <div class="symbol">🎬</div>
         <h3>Домашний кинотеатр</h3>
-        <p>
-          Большое изображение, приглушённый свет и звук, который помогает
-          глубже погрузиться в фильм. Знакомая история на большом экране
-          ощущается совсем иначе.
-        </p>
+        <p>Большое изображение, приглушённый свет и звук для полного погружения в фильм.</p>
       </article>
-      <article class="feature">
-        <span class="symbol">🎮</span>
+      <article class="card">
+        <div class="symbol">🎮</div>
         <h3>PlayStation 4 Pro</h3>
-        <p>
-          Отдельное место для игровых приключений, открытых миров,
-          гонок и экшена. Любимые игры получают собственную атмосферу
-          благодаря большому изображению и акустике.
-        </p>
+        <p>Открытые миры, экшен, гонки и приключения на большом экране.</p>
       </article>
-      <article class="feature">
-        <span class="symbol">🔊</span>
+      <article class="card">
+        <div class="symbol">🔊</div>
         <h3>Звук в пространстве</h3>
-        <p>
-          Акустическая система — важная часть впечатления. Музыка,
-          игровые эффекты и звуковое сопровождение помогают создать
-          узнаваемый характер «Зимней Вишни».
-        </p>
+        <p>Музыка и игровые эффекты становятся важной частью общего впечатления.</p>
       </article>
     </div>
   </div>
@@ -426,291 +295,130 @@ footer strong { color: var(--white); }
     <div class="section-head">
       <div class="eyebrow">Коллекция оборудования</div>
       <h2>Техника, у которой есть характер</h2>
-      <p>
-        Каждое устройство занимает своё место в системе. Здесь ценится
-        не только внешний вид оборудования, но и его роль в общей
-        звуковой картине.
+      <p class="intro">
+        Каждое устройство занимает своё место в системе и в истории
+        «Зимней Вишни».
       </p>
     </div>
 
-    <div class="gear-grid">
-      <article class="gear">
-        <span class="number">01 / НИЗКИЕ ЧАСТОТЫ</span>
-        <span class="symbol">🔊</span>
+    <div class="grid">
+      <article class="card">
+        <div class="symbol">🔊</div>
+        <span class="tag">НИЗКИЕ ЧАСТОТЫ</span>
         <h3>EUROSOUND FOCUS 1100A</h3>
         <p>
-          Активный сабвуфер — один из ключевых элементов звуковой системы.
-          Он отвечает за воспроизведение низкочастотной составляющей
-          и добавляет звучанию вес и масштаб.
+          Активный сабвуфер для воспроизведения низких частот.
+          Добавляет звучанию вес и масштаб.
         </p>
-        <div class="kind"><span class="tag">АКТИВНЫЙ САБВУФЕР</span></div>
       </article>
-
-      <article class="gear">
-        <span class="number">02 / КЛАССИКА</span>
-        <span class="symbol">🎵</span>
+      <article class="card">
+        <div class="symbol">🎵</div>
+        <span class="tag">АКУСТИКА</span>
         <h3>Radiotehnika S-90</h3>
         <p>
-          Знакомая многим классика отечественной акустики.
-          Колонки становятся частью системы, в которой ценят сам звук,
-          характер оборудования и удовольствие от прослушивания музыки.
+          Классика отечественной акустики, ценимая за характер,
+          узнаваемость и удовольствие от прослушивания музыки.
         </p>
-        <div class="kind"><span class="tag">АКУСТИЧЕСКАЯ СИСТЕМА</span></div>
       </article>
-
-      <article class="gear">
-        <span class="number">03 / СИГНАЛ</span>
-        <span class="symbol">🎚️</span>
+      <article class="card">
+        <div class="symbol">🎚️</div>
+        <span class="tag">АУДИООБОРУДОВАНИЕ</span>
         <h3>Invotone SP 106M</h3>
         <p>
-          Устройство для работы с аудиосигналом и подключения компонентов
-          системы. В общей конфигурации оно помогает организовать
-          прохождение сигнала между источниками и звуковым оборудованием.
+          Компонент звуковой системы для организации подключения
+          и прохождения аудиосигнала между устройствами.
         </p>
-        <div class="kind"><span class="tag">АУДИООБОРУДОВАНИЕ</span></div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="cinema" id="atmosphere">
+<section class="dark-section" id="atmosphere">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">Характер пространства</div>
       <h2>Цокольный этаж со своей атмосферой</h2>
-      <p>
+      <p class="intro">
         Около 130 квадратных метров, низкие потолки, плиточный пол,
         оборудование и отдельное пространство для музыки и развлечений.
-        Это не стандартная гостиная — у этого места собственный характер.
       </p>
     </div>
 
-    <div class="atmosphere-grid">
-      <article class="atmosphere-card">
-        <span class="symbol">🏠</span>
-        <h3>Низкие потолки</h3>
-        <p>
-          Архитектурная особенность помещения, которую учитывают при
-          размещении акустики и организации проекции.
-        </p>
+    <div class="grid">
+      <article class="card">
+        <div class="symbol">🏠</div>
+        <h3>Особенное помещение</h3>
+        <p>Архитектура и размеры комнаты учитываются при размещении акустики и проектора.</p>
       </article>
-      <article class="atmosphere-card">
-        <span class="symbol">〰️</span>
-        <h3>Акустически плотная среда</h3>
-        <p>
-          Пространство воспринимается как единая звуковая зона.
-          Расстановка колонок и положение слушателя помогают формировать
-          итоговое звучание.
-        </p>
+      <article class="card">
+        <div class="symbol">〰️</div>
+        <h3>Звуковая зона</h3>
+        <p>Расположение колонок и слушателя влияет на итоговое звучание системы.</p>
       </article>
-      <article class="atmosphere-card">
-        <span class="symbol">🎥</span>
-        <h3>Стена становится экраном</h3>
-        <p>
-          Проекция превращает обычную стену в большую поверхность для
-          кино и игр — без необходимости смотреть в маленький дисплей.
-        </p>
-      </article>
-      <article class="atmosphere-card">
-        <span class="symbol">🍒</span>
+      <article class="card">
+        <div class="symbol">🍒</div>
         <h3>Всё в одном месте</h3>
-        <p>
-          Музыка, кино, игры и любимая техника объединяются в личном
-          пространстве, созданном для отдыха и впечатлений.
-        </p>
+        <p>Музыка, кино, игры и любимая техника — личный мир звука и впечатлений.</p>
       </article>
     </div>
   </div>
 </section>
 
-<section class="closing">
+<section id="visit">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Зимняя Вишня</div>
-      <h2>У каждого звука своя история.<br><span style="color:var(--pink)">У каждого пространства — душа.</span></h2>
-      <p>
-        Это история увлечения техникой, большого изображения и любви
-        к хорошему звуку. Пространство, которое развивается вместе
-        со своими идеями и становится всё интереснее с каждым новым
-        элементом системы.
+      <div class="eyebrow">Твой вечер начинается здесь</div>
+      <h2>Билет в мир <span class="pink">«Зимней Вишни»</span></h2>
+      <p class="intro">
+        Большой экран, PlayStation 4 Pro и акустика.
+        Хочешь посетить пространство? Отправь заявку через форму.
       </p>
     </div>
-    <a class="btn" href="#home">Вернуться наверх ↑</a>
+
+    <div class="booking">
+      <div class="eyebrow">Стоимость входа</div>
+      <div class="price">99 ₽</div>
+      <p class="muted">за один билет</p>
+      <hr style="border:0;border-top:1px solid var(--line);margin:24px 0">
+      <h3>📍 Алексеевка</h3>
+      <p class="muted">
+        Точный адрес сообщается посетителям после согласования посещения.
+      </p>
+      <h3>🎟️ Оставить заявку</h3>
+      <p class="muted">
+        Укажи имя, количество билетов и удобную дату в форме бронирования.
+        Заявка не означает автоматического подтверждения или оплаты.
+      </p>
+      <a class="btn"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSe0nZw6Z3axcu-mOgRDxh2fqkiTjYSMvLFhPIVN2fD9HIwoLA/viewform?usp=preview"
+         target="_blank"
+         rel="noopener noreferrer">
+        🎟️ Забронировать билет →
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section" style="text-align:center">
+  <div class="container">
+    <div class="eyebrow">Зимняя Вишня</div>
+    <h2>У каждого звука своя история.<br><span class="pink">У каждого пространства — душа.</span></h2>
+    <p class="intro" style="margin:0 auto 25px">
+      Личный проект, который развивается вместе с идеями,
+      оборудованием и любовью к хорошему звуку.
+    </p>
+    <a class="btn secondary" href="#home">Вернуться наверх ↑</a>
   </div>
 </section>
 </main>
 
-<section id="e-tickets" style="padding:70px 0;background:#10070c;color:#fff5f8;font-family:Arial,sans-serif">
-  <div style="width:min(760px,90%);margin:auto">
-    <p style="color:#f09ab8;letter-spacing:4px;font-size:12px">ЗИМНЯЯ ВИШНЯ · E-TICKET</p>
-    <h2 style="font-size:clamp(32px,6vw,48px);line-height:1.15">Твой билет в мир звука 🍒</h2>
-    <p style="color:#c5aab6;line-height:1.8">
-      Создай электронный макет билета для посещения «Зимней Вишни».
-      Стоимость одного билета — 99 ₽.
-    </p>
-
-    <form id="ticketForm" style="display:grid;gap:16px;margin-top:28px">
-      <label>
-        Имя посетителя
-        <input id="ticketName" required maxlength="60" placeholder="Как к тебе обращаться?"
-          style="display:block;width:100%;padding:14px;margin-top:7px;border-radius:8px;border:1px solid #633047;background:#1d0c16;color:white;font-size:16px">
-      </label>
-      <label>
-        Количество билетов
-        <select id="ticketQty" style="display:block;width:100%;padding:14px;margin-top:7px;border-radius:8px;border:1px solid #633047;background:#1d0c16;color:white;font-size:16px">
-          <option value="1">1 билет — 99 ₽</option>
-          <option value="2">2 билета — 198 ₽</option>
-          <option value="3">3 билета — 297 ₽</option>
-          <option value="4">4 билета — 396 ₽</option>
-          <option value="5">5 билетов — 495 ₽</option>
-        </select>
-      </label>
-      <button type="submit" style="padding:15px;border:0;border-radius:8px;background:#a52b52;color:white;font-size:16px;font-weight:bold;cursor:pointer">
-        Создать электронный билет
-      </button>
-    </form>
-
-    <div id="ticketResult" hidden style="margin-top:28px">
-      <div id="ticketCard" style="background:linear-gradient(135deg,#351326,#1d0c16);border:1px solid #f09ab8;border-radius:18px;overflow:hidden">
-        <div style="padding:24px;border-bottom:1px dashed #a65b7b">
-          <p style="color:#f09ab8;letter-spacing:3px;font-size:11px">ELECTRONIC TICKET</p>
-          <h3 style="font-size:29px;margin:8px 0">🍒 Зимняя Вишня</h3>
-          <p style="color:#c5aab6;margin:0">Звук · Кино · Игры</p>
-        </div>
-        <div style="padding:24px">
-          <p style="color:#c5aab6;margin-bottom:4px">Посетитель</p>
-          <div id="outName" style="font-size:22px;font-weight:bold;overflow-wrap:anywhere"></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px">
-            <div>
-              <p style="color:#c5aab6;font-size:12px;margin-bottom:4px">КОЛИЧЕСТВО</p>
-              <strong id="outQty"></strong>
-            </div>
-            <div>
-              <p style="color:#c5aab6;font-size:12px;margin-bottom:4px">СТОИМОСТЬ</p>
-              <strong id="outPrice" style="font-size:23px;color:#f09ab8"></strong>
-            </div>
-          </div>
-          <div style="margin-top:24px;padding-top:18px;border-top:1px solid #633047">
-            <p style="color:#c5aab6;font-size:12px;margin-bottom:4px">НОМЕР МАКЕТА БИЛЕТА</p>
-            <strong id="outCode" style="font-size:20px;letter-spacing:2px;overflow-wrap:anywhere"></strong>
-          </div>
-          <p style="color:#c5aab6;font-size:12px;margin-top:20px">
-            Этот макет не подтверждает оплату или бронирование.
-            Для действительного входного билета требуется подтверждение организатора.
-          </p>
-        </div>
-      </div>
-      <button id="printTicket" type="button" style="width:100%;margin-top:15px;padding:14px;border:1px solid #f09ab8;border-radius:8px;background:transparent;color:white;font-weight:bold;font-size:16px">
-        🖨️ Распечатать / сохранить в PDF
-      </button>
-      <p style="color:#c5aab6;font-size:13px">
-        При выборе печати на телефоне выбери «Сохранить как PDF», если эта опция доступна.
-      </p>
-    </div>
-  </div>
-</section>
-
-<style>
-@media print {
-  body * { visibility:hidden !important; }
-  #ticketResult, #ticketResult * { visibility:visible !important; }
-  #ticketResult {
-    display:block !important;
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-    margin:0 !important;
-  }
-  #ticketCard {
-    background:white !important;
-    color:#24101b !important;
-    border:2px solid #a52b52 !important;
-    print-color-adjust:exact;
-    -webkit-print-color-adjust:exact;
-  }
-  #ticketCard p { color:#59434e !important; }
-  #printTicket, #ticketResult > p { display:none !important; }
-}
-</style>
-
-<script>
-(function () {
-  const form = document.getElementById("ticketForm");
-  const result = document.getElementById("ticketResult");
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const name = document.getElementById("ticketName").value.trim();
-    const qty = Number(document.getElementById("ticketQty").value);
-
-    if (!name || qty < 1 || qty > 5) return;
-
-    const code = "ZV-" + Date.now().toString(36).toUpperCase()
-      + "-" + Math.random().toString(36).slice(2, 6).toUpperCase();
-
-    document.getElementById("outName").textContent = name;
-    document.getElementById("outQty").textContent = qty + (qty === 1 ? " билет" : " билета");
-    document.getElementById("outPrice").textContent = (qty * 99) + " ₽";
-    document.getElementById("outCode").textContent = code;
-
-    result.hidden = false;
-    result.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-
-  document.getElementById("printTicket").addEventListener("click", function () {
-    window.print();
-  });
-})();
-</script>
-
 <footer>
   <div class="container footer-inner">
-    <div><strong>🍒 Зимняя Вишня</strong> — территория звука, кино и игр.</div>
-    <div>Алексеевка · Личный проект</div>
-    <div>© <span id="year"></span> Зимняя Вишня</div>
+    <strong style="color:var(--white)">🍒 Зимняя Вишня</strong>
+    <span>Алексеевка · Личный проект</span>
+    <span>© <span id="year"></span> Зимняя Вишня</span>
   </div>
 </footer>
-<section id="visit" style="padding:75px 0;background:linear-gradient(135deg,#210b18,#10070c);color:#fff5f8;font-family:Arial,sans-serif">
-  <div style="width:min(900px,90%);margin:auto">
-    <p style="color:#f09ab8;letter-spacing:4px;font-size:12px">ТВОЙ ВЕЧЕР НАЧИНАЕТСЯ ЗДЕСЬ</p>
-    <h2 style="font-size:clamp(34px,6vw,55px);line-height:1.1">Билет в мир<br><span style="color:#f09ab8">«Зимней Вишни»</span></h2>
-    <p style="color:#c5aab6;max-width:620px;line-height:1.8">
-      Большой экран, PlayStation 4 Pro и мощная акустика.
-      Приходи за атмосферой кино, игр и музыки — здесь каждый вечер
-      может стать отдельной историей.
-    </p>
-
-    <div style="margin-top:30px;padding:30px;border-radius:20px;border:1px solid #633047;background:rgba(255,255,255,.04)">
-      <p style="color:#f09ab8;letter-spacing:2px;font-size:12px">СТОИМОСТЬ ВХОДА</p>
-      <div style="font-size:58px;font-weight:900;line-height:1.2">99 ₽</div>
-      <p style="color:#c5aab6">за один билет</p>
-
-      <hr style="border:0;border-top:1px solid #633047;margin:25px 0">
-
-      <h3>📍 Где нас найти</h3>
-      <p style="color:#c5aab6">Алексеевка. Точный адрес посетителям предоставляется при подтверждении посещения.</p>
-
-      <h3>📞 Бронирование</h3>
-      <p style="color:#c5aab6">Свяжитесь с организатором, чтобы уточнить дату, время и наличие мест.</p>
-
-<a class="btn"
-   href="https://docs.google.com/forms/d/e/1FAIpQLSe0nZw6Z3axcu-mOgRDxh2fqkiTjYSMvLFhPIVN2fD9HIwoLA/viewform?usp=preview"
-   target="_blank"
-   rel="noopener noreferrer">
-  🎟️ Забронировать билет за 99 ₽ →
-</a>
-
-        
-     </a>
-      <p style="font-size:12px;color:#a98b98;margin-top:18px">
-        Бронирование не подтверждается автоматически. Уточните условия у организатора.
-      </p>
-    </div>
-  </div>
-</section>
-
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
