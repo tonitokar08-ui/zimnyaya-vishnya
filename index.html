@@ -3,165 +3,553 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#160810">
-<meta name="description" content="Зимняя Вишня — акустика, музыка и техническое творчество.">
-<title>Зимняя Вишня | Пространство звука</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#16070e">
+<meta name="description" content="Зимняя Вишня — личное пространство звука, кино и игр. Мощная акустика, проектор, большой экран и PlayStation 4 Pro.">
+<title>Зимняя Вишня — территория звука и кино</title>
+
 <style>
-:root{--bg:#10070d;--panel:#21101a;--wine:#a62b52;--pink:#ff9ab8;--text:#fff1f5;--muted:#cbb5bf;--line:#51253a}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at 80% 0%,#59172f,transparent 38%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
-.wrap{width:min(1080px,calc(100% - 32px));margin:auto}
-header{padding:18px 0;border-bottom:1px solid var(--line);background:#10070df0}
-nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-.logo{font-weight:900;letter-spacing:2px;text-decoration:none}
-.logo span,h1 span{color:var(--pink)}
-.links{display:flex;gap:14px;flex-wrap:wrap}
-.links a{color:var(--muted);text-decoration:none;font-size:14px}
-.links a:hover{color:white}
-.hero{padding:78px 0 55px}
-.tag,.label{color:var(--pink);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:bold}
-h1{font-size:clamp(48px,10vw,96px);line-height:.98;letter-spacing:-3px;margin:22px 0}
-h1 span{display:block}
-.lead{font-size:clamp(18px,3vw,22px);color:#e2cbd4;max-width:700px}
-.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
-.btn{display:inline-block;padding:11px 17px;border-radius:11px;text-decoration:none;font-weight:bold;border:1px solid var(--line)}
-.primary{background:linear-gradient(135deg,#b6325c,#761638);border-color:#c94d75}
-.secondary{background:#ffffff08}
-.stats,.catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
-.stat,.card,.panel{padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#28131e,#180b12)}
-.stat strong{display:block;color:var(--pink)}
-.stat small{color:var(--muted)}
-section{padding:48px 0}
-h2{font-size:clamp(30px,6vw,46px);line-height:1.15;letter-spacing:-1px;margin:8px 0 14px}
-.intro,.card p,.panel p{color:var(--muted)}
-.card .emoji{font-size:32px}
-.card h3{margin:9px 0 5px}
-.card p{font-size:14px;margin-bottom:0}
-.spec{border-top:1px solid var(--line);padding-top:10px;margin-top:14px;font-size:13px;color:var(--muted)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.people{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
-.person{padding:20px;border:1px solid var(--line);border-radius:15px;background:#ffffff05}
-.person p{margin-bottom:0;color:var(--muted)}
-.contact{background:linear-gradient(135deg,#421328,#1a0b13);border:1px solid #78304b;border-radius:20px;padding:26px}
-footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:13px}
-@media(max-width:700px){.hero{padding:52px 0 35px}.stats,.catalog,.split,.people{grid-template-columns:1fr}.links{gap:10px}section{padding:36px 0}h1{letter-spacing:-2px}}
+:root {
+  --bg: #10070c;
+  --panel: #1d0c16;
+  --panel2: #28101e;
+  --red: #a52b52;
+  --pink: #f09ab8;
+  --white: #fff5f8;
+  --muted: #c5aab6;
+  --line: rgba(255,255,255,.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--white);
+  background: var(--bg);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.container { width: min(1120px, 90%); margin: auto; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(16,7,12,.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.logo {
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.logo span { color: var(--pink); }
+nav { display: flex; flex-wrap: wrap; gap: 22px; }
+nav a { color: var(--muted); font-size: 14px; }
+nav a:hover { color: var(--pink); }
+
+.hero {
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 78% 40%, rgba(165,43,82,.32), transparent 43%),
+    radial-gradient(ellipse at 15% 90%, rgba(90,20,51,.25), transparent 45%),
+    linear-gradient(145deg,#10070c,#210b18 65%,#10070c);
+}
+.hero::after {
+  content: "ЗВУК • КИНО • ИГРЫ";
+  position: absolute;
+  right: -25px;
+  bottom: 20px;
+  font-size: clamp(30px,7vw,85px);
+  font-weight: 900;
+  letter-spacing: 5px;
+  white-space: nowrap;
+  color: rgba(255,255,255,.025);
+  pointer-events: none;
+}
+.eyebrow {
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+h1 {
+  max-width: 850px;
+  font-size: clamp(43px,8vw,88px);
+  line-height: 1.02;
+  letter-spacing: -3px;
+  margin: 22px 0;
+}
+h1 span {
+  color: var(--pink);
+  display: block;
+}
+.hero p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: clamp(16px,2vw,19px);
+}
+.actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 8px;
+  background: var(--red);
+  color: white;
+  font-weight: bold;
+  border: 1px solid var(--red);
+  transition: .2s;
+}
+.btn:hover { transform: translateY(-2px); background: #bd3965; }
+.btn.secondary { background: transparent; border-color: var(--line); }
+
+section { padding: 90px 0; scroll-margin-top: 80px; }
+.section-head { max-width: 760px; margin-bottom: 36px; }
+h2 {
+  font-size: clamp(30px,5vw,48px);
+  line-height: 1.15;
+  margin: 10px 0 18px;
+  letter-spacing: -1px;
+}
+.section-head p, .copy { color: var(--muted); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 28px;
+  align-items: stretch;
+}
+.panel {
+  padding: clamp(23px,4vw,38px);
+  background: linear-gradient(145deg,var(--panel2),var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.panel h3 { margin-top: 0; font-size: 23px; }
+.quote {
+  font-size: clamp(22px,3vw,31px);
+  font-weight: bold;
+  line-height: 1.4;
+}
+.quote span { color: var(--pink); }
+.facts { display: grid; gap: 12px; }
+.fact {
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid var(--line);
+}
+.fact strong { display: block; color: var(--pink); font-size: 18px; }
+.fact small { color: var(--muted); font-size: 14px; }
+
+.cinema {
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(165,43,82,.18),transparent 65%),
+    #170912;
+}
+.feature-grid, .gear-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+.feature, .gear {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.035);
+  border-radius: 16px;
+  padding: 25px;
+  transition: .25s;
+}
+.feature:hover, .gear:hover {
+  transform: translateY(-4px);
+  border-color: rgba(240,154,184,.5);
+}
+.symbol {
+  font-size: 35px;
+  display: block;
+  margin-bottom: 13px;
+}
+.feature h3, .gear h3 { font-size: 21px; line-height: 1.3; }
+.feature p, .gear p { color: var(--muted); font-size: 15px; }
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--pink);
+  border: 1px solid rgba(240,154,184,.3);
+  border-radius: 30px;
+  padding: 4px 10px;
+  letter-spacing: 1px;
+}
+.screen {
+  margin-top: 28px;
+  padding: clamp(25px,5vw,50px);
+  text-align: center;
+  border: 1px solid rgba(240,154,184,.25);
+  border-radius: 18px;
+  background: linear-gradient(135deg,rgba(165,43,82,.2),rgba(255,255,255,.025));
+}
+.screen-visual {
+  width: min(600px,100%);
+  aspect-ratio: 16/9;
+  margin: 24px auto;
+  border: 5px solid #3b2732;
+  border-radius: 5px;
+  background:
+    radial-gradient(circle at 70% 30%,rgba(240,154,184,.7),transparent 20%),
+    linear-gradient(135deg,#6b2445,#251128 45%,#100b19);
+  box-shadow: 0 0 45px rgba(165,43,82,.2);
+  display: grid;
+  place-items: center;
+}
+.screen-visual span {
+  font-size: clamp(23px,5vw,44px);
+  font-weight: 900;
+  text-shadow: 0 4px 20px #000;
+  letter-spacing: 2px;
+}
+.screen-note { color: var(--muted); font-size: 14px; }
+
+.gear { display: flex; flex-direction: column; }
+.gear .number { color: var(--pink); font-size: 13px; letter-spacing: 2px; }
+.gear p { flex: 1; }
+.gear .kind { margin-top: 10px; }
+
+.atmosphere-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
+.atmosphere-card {
+  min-height: 220px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg,#351326,#170912);
+}
+.atmosphere-card h3 { font-size: 24px; margin-bottom: 5px; }
+.atmosphere-card p { color: var(--muted); margin-bottom: 0; }
+
+.closing {
+  text-align: center;
+  background: linear-gradient(135deg,#2a0d1b,#10070c 75%);
+}
+.closing .section-head { margin: 0 auto 25px; }
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+footer strong { color: var(--white); }
+
+@media (max-width: 760px) {
+  .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+  nav { gap: 10px 17px; }
+  .hero { min-height: 590px; }
+  h1 { letter-spacing: -1.5px; }
+  section { padding: 65px 0; }
+  .about-grid, .feature-grid, .gear-grid, .atmosphere-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
 </style>
 </head>
+
 <body>
 <header>
-<div class="wrap">
-<nav>
-<a class="logo" href="#home">ЗИМНЯЯ <span>ВИШНЯ</span></a>
-<div class="links">
-<a href="#about">О проекте</a>
-<a href="#catalog">Оборудование</a>
-<a href="#space">Пространство</a>
-<a href="#contacts">Контакты</a>
-</div>
-</nav>
-</div>
+  <div class="container nav">
+    <a class="logo" href="#home">🍒 ЗИМНЯЯ <span>ВИШНЯ</span></a>
+    <nav aria-label="Основная навигация">
+      <a href="#about">О пространстве</a>
+      <a href="#cinema">Кино и игры</a>
+      <a href="#sound">Акустика</a>
+      <a href="#atmosphere">Атмосфера</a>
+    </nav>
+  </div>
 </header>
 
-<main id="home">
-<section class="hero">
-<div class="wrap">
-<div class="tag">Музыка · Техника · Атмосфера</div>
-<h1>Зимняя <span>Вишня.</span></h1>
-<p class="lead">Личное пространство звука, акустики и технического творчества. Здесь оборудование становится частью атмосферы, а интерес к технике превращается в собственный проект.</p>
-<div class="buttons">
-<a class="btn primary" href="#catalog">Каталог оборудования ↓</a>
-<a class="btn secondary" href="#about">История проекта</a>
-</div>
-<div class="stats">
-<div class="stat"><strong>Акустика</strong><small>Колонки и сабвуферы</small></div>
-<div class="stat"><strong>Электроника</strong><small>Усиление и коммутация</small></div>
-<div class="stat"><strong>Творчество</strong><small>Музыка, кино и эксперименты</small></div>
-</div>
-</div>
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="eyebrow">Личное пространство · Алексеевка</div>
+    <h1>Здесь звук<br>становится <span>атмосферой.</span></h1>
+    <p>
+      «Зимняя Вишня» — особое пространство, созданное вокруг
+      любви к музыке, кино, играм и настоящей технике.
+      Большой экран, PlayStation 4 Pro и мощная акустическая система
+      объединяются здесь в один мир, где можно погрузиться в происходящее
+      и забыть о суете за пределами комнаты.
+    </p>
+    <div class="actions">
+      <a class="btn" href="#cinema">Исследовать пространство ↓</a>
+      <a class="btn secondary" href="#sound">Знакомство с техникой</a>
+    </div>
+  </div>
 </section>
 
 <section id="about">
-<div class="wrap">
-<div class="label">О проекте</div>
-<h2>Больше, чем просто звук.</h2>
-<p class="intro">«Зимняя Вишня» — проект о музыке, акустике и создании собственного пространства. В центре внимания — оборудование, особенности звучания, настройка систем и технические эксперименты.</p>
-<p class="intro">Это место для музыки, фильмов, игр и новых идей. Проект развивается постепенно: каждый компонент и каждое улучшение становятся частью общей истории.</p>
-</div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Больше, чем комната</div>
+      <h2>Место, где техника оживает в деталях</h2>
+      <p>
+        У каждого пространства свой характер. У «Зимней Вишни» он
+        складывается из мощного звучания, большого изображения,
+        любимых игр и особой атмосферы цокольного этажа.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div class="panel">
+        <div class="quote">
+          Не просто включить музыку.<br>
+          <span>Почувствовать её.</span>
+        </div>
+        <p class="copy">
+          Здесь важна каждая составляющая: источник сигнала, усиление,
+          акустика и само помещение. Кино должно захватывать изображением,
+          игры — погружать в происходящее, а музыка — наполнять пространство
+          характером и настроением.
+        </p>
+        <p class="copy">
+          «Зимняя Вишня» — личный проект, в котором увлечение техникой
+          превращается в собственный мир звука и впечатлений.
+        </p>
+      </div>
+
+      <div class="panel facts">
+        <div class="fact">
+          <strong>≈ 130 м²</strong>
+          <small>Площадь цокольного этажа</small>
+        </div>
+        <div class="fact">
+          <strong>Большой экран</strong>
+          <small>Проектор для просмотра на стене</small>
+        </div>
+        <div class="fact">
+          <strong>Игровая зона</strong>
+          <small>PlayStation 4 Pro</small>
+        </div>
+        <div class="fact">
+          <strong>Акустический характер</strong>
+          <small>Плотное помещение и отдельная акустическая система</small>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="catalog">
-<div class="wrap">
-<div class="label">Каталог</div>
-<h2>Оборудование проекта</h2>
-<p class="intro">Знакомство с техникой, которая используется или обсуждается в проекте. Неуточнённые характеристики намеренно не указаны.</p>
-<div class="catalog">
-<article class="card">
-<div class="emoji">🔊</div>
-<h3>EUROSOUND FOCUS 1100A</h3>
-<p>Активный сабвуфер. Часть акустического оборудования пространства «Зимняя Вишня».</p>
-<div class="spec">Тип: активный сабвуфер<br>Другие параметры: уточняются по маркировке устройства</div>
-</article>
-<article class="card">
-<div class="emoji">🎵</div>
-<h3>Radiotehnika S-90</h3>
-<p>Акустические системы семейства S-90. Используются в проекте для работы со звуком.</p>
-<div class="spec">Семейство: S-90<br>Точная модификация конкретной пары: уточняется</div>
-</article>
-<article class="card">
-<div class="emoji">🎚️</div>
-<h3>Invotone SP 106M</h3>
-<p>Оборудование для подключения и работы с аудиосигналом в акустической системе.</p>
-<div class="spec">Модель: SP 106M<br>Подключения и режимы следует сверять с маркировкой устройства</div>
-</article>
-</div>
-</div>
+<section class="cinema" id="cinema">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Большое изображение · Полное погружение</div>
+      <h2>Кино и игры — на большом масштабе</h2>
+      <p>
+        Проектор выводит изображение на большую стену, превращая её
+        в центр просмотра. Здесь можно устроить вечер кино, погрузиться
+        в игровой мир или просто включить любимый контент и наслаждаться
+        атмосферой собственного пространства.
+      </p>
+    </div>
+
+    <div class="screen">
+      <span class="tag">ПРОЕКТОР · БОЛЬШОЙ ЭКРАН</span>
+      <div class="screen-visual" role="img" aria-label="Стилизованная иллюстрация большого экрана с кинематографическим свечением">
+        <span>ТВОЙ МИР.<br>БОЛЬШОЙ ЭКРАН.</span>
+      </div>
+      <h3>Изображение на всю стену — впечатления без границ</h3>
+      <p class="screen-note">
+        Иллюстрация концепции экрана. Реальная проекция зависит от установки
+        проектора, расстояния до стены и условий освещения.
+      </p>
+    </div>
+
+    <div class="feature-grid" style="margin-top:22px">
+      <article class="feature">
+        <span class="symbol">🎬</span>
+        <h3>Домашний кинотеатр</h3>
+        <p>
+          Большое изображение, приглушённый свет и звук, который помогает
+          глубже погрузиться в фильм. Знакомая история на большом экране
+          ощущается совсем иначе.
+        </p>
+      </article>
+      <article class="feature">
+        <span class="symbol">🎮</span>
+        <h3>PlayStation 4 Pro</h3>
+        <p>
+          Отдельное место для игровых приключений, открытых миров,
+          гонок и экшена. Любимые игры получают собственную атмосферу
+          благодаря большому изображению и акустике.
+        </p>
+      </article>
+      <article class="feature">
+        <span class="symbol">🔊</span>
+        <h3>Звук в пространстве</h3>
+        <p>
+          Акустическая система — важная часть впечатления. Музыка,
+          игровые эффекты и звуковое сопровождение помогают создать
+          узнаваемый характер «Зимней Вишни».
+        </p>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section id="space">
-<div class="wrap split">
-<div>
-<div class="label">Пространство</div>
-<h2>Свой угол для больших идей.</h2>
-<p class="intro">Цокольный этаж постепенно становится местом для музыки, кино, встреч и экспериментов с акустикой.</p>
-<p class="intro">Важны не только громкость и бас, но и удобная расстановка оборудования, надёжные подключения и внимательное отношение к технике.</p>
-</div>
-<div class="panel">
-<div class="label">Философия проекта</div>
-<h2>Звук, который создаёт атмосферу.</h2>
-<p>Музыка. Техника. Пространство. Всё начинается с интереса и желания создавать что-то своё.</p>
-</div>
-</div>
+<section id="sound">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Коллекция оборудования</div>
+      <h2>Техника, у которой есть характер</h2>
+      <p>
+        Каждое устройство занимает своё место в системе. Здесь ценится
+        не только внешний вид оборудования, но и его роль в общей
+        звуковой картине.
+      </p>
+    </div>
+
+    <div class="gear-grid">
+      <article class="gear">
+        <span class="number">01 / НИЗКИЕ ЧАСТОТЫ</span>
+        <span class="symbol">🔊</span>
+        <h3>EUROSOUND FOCUS 1100A</h3>
+        <p>
+          Активный сабвуфер — один из ключевых элементов звуковой системы.
+          Он отвечает за воспроизведение низкочастотной составляющей
+          и добавляет звучанию вес и масштаб.
+        </p>
+        <div class="kind"><span class="tag">АКТИВНЫЙ САБВУФЕР</span></div>
+      </article>
+
+      <article class="gear">
+        <span class="number">02 / КЛАССИКА</span>
+        <span class="symbol">🎵</span>
+        <h3>Radiotehnika S-90</h3>
+        <p>
+          Знакомая многим классика отечественной акустики.
+          Колонки становятся частью системы, в которой ценят сам звук,
+          характер оборудования и удовольствие от прослушивания музыки.
+        </p>
+        <div class="kind"><span class="tag">АКУСТИЧЕСКАЯ СИСТЕМА</span></div>
+      </article>
+
+      <article class="gear">
+        <span class="number">03 / СИГНАЛ</span>
+        <span class="symbol">🎚️</span>
+        <h3>Invotone SP 106M</h3>
+        <p>
+          Устройство для работы с аудиосигналом и подключения компонентов
+          системы. В общей конфигурации оно помогает организовать
+          прохождение сигнала между источниками и звуковым оборудованием.
+        </p>
+        <div class="kind"><span class="tag">АУДИООБОРУДОВАНИЕ</span></div>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section id="team">
-<div class="wrap">
-<div class="label">Люди проекта</div>
-<h2>За идеей стоят люди.</h2>
-<div class="people">
-<div class="person"><strong>Токарь Антон Александрович</strong><p>Автор и создатель проекта «Зимняя Вишня».</p></div>
-<div class="person"><strong>Токарь Александр Анатольевич</strong><p>Поддержка проекта и семейная история пространства.</p></div>
-</div>
-</div>
+<section class="cinema" id="atmosphere">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Характер пространства</div>
+      <h2>Цокольный этаж со своей атмосферой</h2>
+      <p>
+        Около 130 квадратных метров, низкие потолки, плиточный пол,
+        оборудование и отдельное пространство для музыки и развлечений.
+        Это не стандартная гостиная — у этого места собственный характер.
+      </p>
+    </div>
+
+    <div class="atmosphere-grid">
+      <article class="atmosphere-card">
+        <span class="symbol">🏠</span>
+        <h3>Низкие потолки</h3>
+        <p>
+          Архитектурная особенность помещения, которую учитывают при
+          размещении акустики и организации проекции.
+        </p>
+      </article>
+      <article class="atmosphere-card">
+        <span class="symbol">〰️</span>
+        <h3>Акустически плотная среда</h3>
+        <p>
+          Пространство воспринимается как единая звуковая зона.
+          Расстановка колонок и положение слушателя помогают формировать
+          итоговое звучание.
+        </p>
+      </article>
+      <article class="atmosphere-card">
+        <span class="symbol">🎥</span>
+        <h3>Стена становится экраном</h3>
+        <p>
+          Проекция превращает обычную стену в большую поверхность для
+          кино и игр — без необходимости смотреть в маленький дисплей.
+        </p>
+      </article>
+      <article class="atmosphere-card">
+        <span class="symbol">🍒</span>
+        <h3>Всё в одном месте</h3>
+        <p>
+          Музыка, кино, игры и любимая техника объединяются в личном
+          пространстве, созданном для отдыха и впечатлений.
+        </p>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section id="contacts">
-<div class="wrap">
-<div class="contact">
-<div class="label">Контакты</div>
-<h2>«Зимняя Вишня»</h2>
-<p>Местоположение: Алексеевка.</p>
-<p class="intro">Личные контактные данные и точный адрес не публикуются на этой странице.</p>
-</div>
-</div>
+<section class="closing">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Зимняя Вишня</div>
+      <h2>У каждого звука своя история.<br><span style="color:var(--pink)">У каждого пространства — душа.</span></h2>
+      <p>
+        Это история увлечения техникой, большого изображения и любви
+        к хорошему звуку. Пространство, которое развивается вместе
+        со своими идеями и становится всё интереснее с каждым новым
+        элементом системы.
+      </p>
+    </div>
+    <a class="btn" href="#home">Вернуться наверх ↑</a>
+  </div>
 </section>
 </main>
 
 <footer>
-<div class="wrap">© <span id="year">2026</span> «Зимняя Вишня» · Пространство музыки и техники.</div>
+  <div class="container footer-inner">
+    <div><strong>🍒 Зимняя Вишня</strong> — территория звука, кино и игр.</div>
+    <div>Алексеевка · Личный проект</div>
+    <div>© <span id="year"></span> Зимняя Вишня</div>
+  </div>
 </footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
-
