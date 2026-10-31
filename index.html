@@ -194,6 +194,16 @@ footer {
 .schedule-note { margin:18px 0 0; font-size:13px; }
 .schedule-events { margin-top:20px; }
 @media(max-width:480px) { .schedule-row { padding:12px 8px; font-size:14px; } }
+
+.gallery-placeholder{min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;padding:20px;border:1px dashed #92506c;border-radius:12px;background:radial-gradient(circle at 50% 40%,#57223c,#1a0b13 72%);color:var(--pink)}
+.gallery-placeholder span{color:var(--muted);font-size:13px}
+.ticket-card{display:grid;grid-template-columns:1fr auto;border:1px solid #d16a91;border-radius:16px;overflow:hidden;background:linear-gradient(120deg,#3a1228,#170a13)}
+.ticket-main{padding:24px}.ticket-side{border-left:1px dashed #d16a91;padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:115px}
+.ticket-price{font-size:32px;font-weight:900;color:var(--pink)}
+.equalizer{min-height:180px;display:flex;align-items:center;justify-content:center;gap:8px;padding:24px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#28101e,#10070c)}
+.equalizer i{display:block;width:9px;border-radius:8px;background:linear-gradient(to top,#a52b52,#f09ab8)}
+@media(max-width:480px){.ticket-card{grid-template-columns:1fr}.ticket-side{border-left:0;border-top:1px dashed #d16a91}.equalizer{gap:5px}.equalizer i{width:6px}}
+
 </style>
 </head>
 
@@ -204,11 +214,15 @@ footer {
     <nav aria-label="Навигация">
     
 <a href="#about">О проекте</a>
+<a href="#gallery">Галерея</a>
 <a href="#cinema">Кино и игры</a>
 <a href="#sound">Акустика</a>
+<a href="#equipment">Каталог</a>
+<a href="#visualizer">Звуковая зона</a>
 <a href="#format">Формат</a>
 <a href="#schedule">Расписание</a>
 <a href="#poster">Афиша</a>
+<a href="#ticket">Билет</a>
 <a href="#rules">Правила</a>
 <a href="#faq">Вопросы</a>
 <a href="#visit">Посещение</a>
@@ -234,6 +248,7 @@ footer {
   </div>
 </section>
 
+<section id="gallery"><div class="container"><div class="section-head"><div class="eyebrow">Пространство в деталях</div><h2>Фотогалерея <span class="pink">«Зимняя Вишня»</span></h2><p class="intro">Здесь будут настоящие фотографии цокольного этажа, оборудования и этапов обновления проекта.</p></div><div class="grid"><div class="gallery-placeholder"><strong>🏠 Помещение</strong><span>Фотографии интерьера появятся здесь</span></div><div class="gallery-placeholder"><strong>🔊 Акустика</strong><span>Фотографии колонок и сабвуфера появятся здесь</span></div><div class="gallery-placeholder"><strong>🎬 Кино и экран</strong><span>Фотографии проектора и экрана появятся здесь</span></div></div><p class="muted" style="margin-top:16px">Это места для будущих фотографий, а не изображения готового ремонта.</p></div></section>
 <section id="about">
   <div class="container">
     <div class="section-head">
@@ -305,6 +320,8 @@ footer {
   </div>
 </section>
 
+<section id="equipment" class="dark-section"><div class="container"><div class="section-head"><div class="eyebrow">Техническая сторона проекта</div><h2>Каталог <span class="pink">оборудования</span></h2><p class="intro">Основные устройства пространства. Неподтверждённые технические характеристики не указываются.</p></div><div class="grid"><article class="card"><div class="symbol">🔊</div><span class="tag">САБВУФЕР</span><h3>EUROSOUND FOCUS 1100A</h3><p>Активный сабвуфер звуковой системы.</p></article><article class="card"><div class="symbol">🎵</div><span class="tag">АКУСТИКА</span><h3>Radiotehnika S-90</h3><p>Акустические системы для прослушивания музыки.</p></article><article class="card"><div class="symbol">🎚️</div><span class="tag">МИКШЕР</span><h3>Invotone SP 106M</h3><p>Компонент для подключения и управления аудиосигналом.</p></article><article class="card"><div class="symbol">🎮</div><span class="tag">ИГРОВАЯ СИСТЕМА</span><h3>PlayStation 4 Pro</h3><p>Игровая консоль для встреч и развлечений на большом экране.</p></article><article class="card"><div class="symbol">📽️</div><span class="tag">ИЗОБРАЖЕНИЕ</span><h3>Проектор и экран</h3><p>Система проекции для фильмов и игр.</p></article></div></div></section>
+<section id="visualizer"><div class="container"><div class="section-head"><div class="eyebrow">Музыка — часть атмосферы</div><h2>Звуковая <span class="pink">зона</span></h2><p class="intro">Фирменная графическая звуковая волна «Зимней Вишни».</p></div><div class="equalizer" role="img" aria-label="Декоративная графическая звуковая волна"><i style="height:34px"></i><i style="height:58px"></i><i style="height:92px"></i><i style="height:65px"></i><i style="height:125px"></i><i style="height:84px"></i><i style="height:150px"></i><i style="height:105px"></i><i style="height:70px"></i><i style="height:132px"></i><i style="height:92px"></i><i style="height:48px"></i><i style="height:112px"></i><i style="height:74px"></i><i style="height:38px"></i></div><p class="muted" style="margin-top:12px">Это декоративная графика: она не подключена к аудиосигналу и не измеряет громкость.</p></div></section>
 <section id="sound">
   <div class="container">
     <div class="section-head">
@@ -414,6 +431,7 @@ footer {
 <!-- ПРАВИЛА ПРОСТРАНСТВА -->
 
 <!-- АФИША МЕРОПРИЯТИЙ -->
+<section id="ticket" class="dark-section"><div class="container"><div class="section-head"><div class="eyebrow">Вход в пространство</div><h2>Билет <span class="pink">«Зимняя Вишня»</span></h2><p class="intro">Макет билета с информацией о стоимости одного посещения. Он не заменяет подтверждение записи.</p></div><div class="ticket-card"><div class="ticket-main"><div class="eyebrow">Личное музыкально-кино пространство</div><h3 style="font-size:26px;margin:12px 0">🍒 ЗИМНЯЯ ВИШНЯ</h3><p class="muted">Алексеевка · Один визит</p><p>Посещение — после предварительного согласования.</p><p class="muted" style="font-size:13px">Организатор: Токарь Антон Александрович</p></div><div class="ticket-side"><span class="muted">СТОИМОСТЬ</span><div class="ticket-price">99 ₽</div><span class="muted">1 посещение</span></div></div><div class="actions"><a class="btn" href="#visit">Оставить заявку ↓</a><a class="btn secondary" href="tel:+79202036007">Связаться с организатором</a></div></div></section>
 <section id="poster" class="dark-section">
   <div class="container">
     <div class="section-head">
