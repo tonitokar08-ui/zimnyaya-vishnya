@@ -186,6 +186,14 @@ footer {
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior: auto; }
 }
+
+.schedule-list { margin-top: 18px; }
+.schedule-row { display:flex; justify-content:space-between; gap:16px; padding:13px 15px; border-bottom:1px solid var(--line); }
+.schedule-row:last-child { border-bottom:0; }
+.schedule-row span { color:var(--pink); font-weight:bold; text-align:right; }
+.schedule-note { margin:18px 0 0; font-size:13px; }
+.schedule-events { margin-top:20px; }
+@media(max-width:480px) { .schedule-row { padding:12px 8px; font-size:14px; } }
 </style>
 </head>
 
@@ -199,6 +207,7 @@ footer {
 <a href="#cinema">Кино и игры</a>
 <a href="#sound">Акустика</a>
 <a href="#format">Формат</a>
+<a href="#schedule">Расписание</a>
 <a href="#faq">Вопросы</a>
 <a href="#visit">Посещение</a>
  
@@ -397,6 +406,40 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- ПРЕДВАРИТЕЛЬНОЕ РАСПИСАНИЕ -->
+<section id="schedule" class="dark-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Планируй свой визит</div>
+      <h2>Расписание и <span class="pink">график работы</span></h2>
+      <p class="intro">Предварительное расписание пространства. Посещение возможно только после согласования времени с организатором.</p>
+    </div>
+    <div class="panel">
+      <h3>🕒 Предварительный график</h3>
+      <div class="schedule-list">
+        <div class="schedule-row"><strong>Понедельник</strong><span>Выходной</span></div>
+        <div class="schedule-row"><strong>Вторник</strong><span>16:00–21:00</span></div>
+        <div class="schedule-row"><strong>Среда</strong><span>16:00–21:00</span></div>
+        <div class="schedule-row"><strong>Четверг</strong><span>16:00–21:00</span></div>
+        <div class="schedule-row"><strong>Пятница</strong><span>16:00–23:00</span></div>
+        <div class="schedule-row"><strong>Суббота</strong><span>12:00–23:00</span></div>
+        <div class="schedule-row"><strong>Воскресенье</strong><span>12:00–21:00</span></div>
+      </div>
+      <p class="muted schedule-note">Время указано предварительно и может меняться. Каждый визит необходимо заранее согласовать с организатором.</p>
+    </div>
+    <div class="grid schedule-events">
+      <article class="card"><div class="symbol">🎬</div><h3>Киносеансы</h3><p>Время и программа киносеансов публикуются отдельно после согласования.</p></article>
+      <article class="card"><div class="symbol">🎵</div><h3>Музыкальные вечера</h3><p>Музыкальные встречи проводятся по предварительной договорённости.</p></article>
+      <article class="card"><div class="symbol">🎮</div><h3>Игровые вечера</h3><p>Игровые встречи на PlayStation 4 Pro — по предварительной записи.</p></article>
+    </div>
+    <div class="actions">
+      <a class="btn" href="#visit">Оставить заявку ↓</a>
+      <a class="btn secondary" href="tel:+79202036007">Связаться с организатором</a>
+    </div>
+  </div>
+</section>
+
 <section id="visit">
   <div class="container">
     <div class="section-head">
