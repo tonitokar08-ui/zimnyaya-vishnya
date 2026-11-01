@@ -57,6 +57,21 @@ footer{padding:32px 0;color:#94848b;font-size:11px}.footer-inner{display:flex;ju
 .motion-ready .reveal-delay-1{transition-delay:.08s}.motion-ready .reveal-delay-2{transition-delay:.16s}.motion-ready .reveal-delay-3{transition-delay:.24s}
 @media(prefers-reduced-motion:reduce){.hero .kicker,.hero h1,.hero-copy,.hero .actions,.hero-note,.hero:after,.brand-mark,.soundwave i{animation:none!important}.btn:after{display:none}.motion-ready .reveal{opacity:1;transform:none;transition:none}}
 
+
+/* Интерактивный режим атмосферы */
+body.club-mode{background:radial-gradient(ellipse at 50% 0%,rgba(145,24,65,.25),transparent 48%),var(--bg);background-attachment:fixed}
+body.club-mode header{box-shadow:0 8px 35px rgba(198,74,112,.16)}
+body.club-mode .hero:after{opacity:1;filter:drop-shadow(0 0 24px rgba(240,164,186,.32))}
+body.club-mode .card,body.club-mode .gear,body.club-mode .contact-card{border-color:rgba(240,164,186,.3);box-shadow:0 12px 45px rgba(198,74,112,.09)}
+body.club-mode .soundwave i{animation-duration:.62s;filter:drop-shadow(0 0 7px rgba(240,164,186,.8))}
+.atmosphere-toggle{position:fixed;right:22px;bottom:22px;z-index:30;display:flex;align-items:center;gap:10px;padding:13px 18px;border:1px solid rgba(240,164,186,.42);border-radius:999px;background:rgba(25,17,20,.92);backdrop-filter:blur(16px);color:var(--ink);font-weight:750;font-size:13px;letter-spacing:.02em;cursor:pointer;box-shadow:0 10px 35px rgba(0,0,0,.3);transition:transform .25s,border-color .25s,background .25s}
+.atmosphere-toggle:hover{transform:translateY(-3px);border-color:var(--rose)}
+.atmosphere-toggle .atmo-dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red);transition:background .25s}
+.club-mode .atmosphere-toggle{background:rgba(105,22,52,.94);border-color:var(--rose)}
+.club-mode .atmosphere-toggle .atmo-dot{background:#b8f2c8;box-shadow:0 0 13px #b8f2c8}
+@media(max-width:520px){.atmosphere-toggle{right:12px;bottom:12px;padding:11px 14px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.atmosphere-toggle{transition:none}}
+
 </style>
 </head>
 <body>
@@ -131,6 +146,7 @@ footer{padding:32px 0;color:#94848b;font-size:11px}.footer-inner{display:flex;ju
  <div class="faq"><details><summary>Где находится «Зимняя Вишня»?</summary><p>В Алексеевке Белгородской области. Точный адрес сообщается после согласования посещения.</p></details><details><summary>Сколько стоит посещение?</summary><p>На сайте указана стоимость 99 ₽ за одно посещение. Актуальные условия можно уточнить у организатора.</p></details><details><summary>Можно ли прийти без записи?</summary><p>Нет, посещение планируется по предварительному согласованию.</p></details><details><summary>Какое оборудование представлено?</summary><p>В проекте указаны Radiotehnika S-90, EUROSOUND FOCUS 1100A, Invotone SP 106M, PlayStation 4 Pro, проектор и экран.</p></details><details><summary>Можно ли выбрать фильм или игру?</summary><p>Пожелания можно обсудить с организатором. Доступность конкретного контента согласуется отдельно.</p></details><details><summary>Заявка подтверждается автоматически?</summary><p>Нет. После отправки формы нужно дождаться отдельного подтверждения от организатора.</p></details></div>
 </div></section>
 </main>
+<button class="atmosphere-toggle" id="atmosphereToggle" type="button" aria-pressed="false"><span class="atmo-dot" aria-hidden="true"></span><span id="atmosphereLabel">Включить атмосферу</span></button>
 <footer><div class="wrap footer-inner"><span class="footer-brand">🍒 ЗИМНЯЯ ВИШНЯ</span><span>Алексеевка · Личный проект</span><span>Организатор: Токарь Антон Александрович</span><span>© <span id="year"></span></span></div></footer>
 <script>
 const toggle=document.getElementById('menuToggle');
@@ -146,6 +162,13 @@ if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-moti
  revealTargets.forEach(el=>observer.observe(el));
 }
 
+const atmosphereButton=document.getElementById('atmosphereToggle');
+const atmosphereLabel=document.getElementById('atmosphereLabel');
+atmosphereButton.addEventListener('click',()=>{
+ const enabled=document.body.classList.toggle('club-mode');
+ atmosphereButton.setAttribute('aria-pressed',String(enabled));
+ atmosphereLabel.textContent=enabled?'Атмосфера включена':'Включить атмосферу';
+});
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>
