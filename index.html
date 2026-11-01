@@ -3,662 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#16070e">
-<meta name="description" content="«Зимняя Вишня» — личное музыкально-кино пространство в Алексеевке Белгородской области. Основатель и автор проекта: Токарь Антон Александрович.">
-<title>Зимняя Вишня — музыкально-кино пространство в Алексеевке</title>
-
+<meta name="theme-color" content="#100b0d">
+<meta name="description" content="Зимняя Вишня — личное музыкально-кино пространство в Алексеевке. Музыка, кино, игры и техника. Организатор: Токарь Антон Александрович.">
+<title>Зимняя Вишня — пространство звука, кино и игр</title>
 <style>
-:root {
-  --bg: #10070c;
-  --panel: #21101a;
-  --red: #a52b52;
-  --pink: #f09ab8;
-  --white: #fff5f8;
-  --muted: #c5aab6;
-  --line: rgba(255,255,255,.13);
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-}
-a { color: inherit; text-decoration: none; }
-.container { width: min(1100px, 90%); margin: auto; }
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(16,7,12,.96);
-  border-bottom: 1px solid var(--line);
-}
-.nav {
-  min-height: 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  padding: 12px 0;
-}
-.logo { font-weight: 900; font-size: 20px; }
-.pink { color: var(--pink); }
-nav { display: flex; gap: 16px; flex-wrap: wrap; }
-nav a { color: var(--muted); font-size: 14px; }
-nav a:hover { color: var(--pink); }
-
-.hero {
-  min-height: 570px;
-  display: flex;
-  align-items: center;
-  background:
-    radial-gradient(ellipse at 80% 30%,#64203d 0%,transparent 42%),
-    linear-gradient(145deg,#10070c,#210b18);
-  padding: 75px 0;
-}
-.eyebrow {
-  color: var(--pink);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 12px;
-  font-weight: bold;
-}
-h1 {
-  font-size: clamp(42px,8vw,82px);
-  line-height: 1.05;
-  letter-spacing: -2px;
-  margin: 20px 0;
-}
-h1 span { display: block; color: var(--pink); }
-.hero p, .intro { color: var(--muted); max-width: 720px; }
-.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-.btn {
-  display: inline-block;
-  background: var(--red);
-  color: white;
-  padding: 13px 20px;
-  border: 1px solid var(--red);
-  border-radius: 8px;
-  font-weight: bold;
-}
-.btn.secondary { background: transparent; border-color: var(--line); }
-.btn:hover { background: #bd3965; }
-
-section { padding: 75px 0; scroll-margin-top: 85px; }
-.section-head { max-width: 760px; margin-bottom: 30px; }
-h2 {
-  font-size: clamp(30px,5vw,46px);
-  line-height: 1.15;
-  margin: 12px 0 18px;
-}
-h3 { line-height: 1.3; }
-.panel, .card {
-  background: linear-gradient(145deg,#28101e,#1a0b13);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 25px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 18px;
-}
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-.muted { color: var(--muted); }
-.stat {
-  padding: 14px;
-  background: rgba(255,255,255,.035);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
-.stat strong { display: block; color: var(--pink); font-size: 20px; }
-.symbol { font-size: 32px; }
-.card p { color: var(--muted); font-size: 15px; }
-.tag {
-  display: inline-block;
-  border: 1px solid #78405a;
-  border-radius: 20px;
-  padding: 4px 10px;
-  color: var(--pink);
-  font-size: 11px;
-  letter-spacing: 1px;
-}
-.dark-section {
-  background: linear-gradient(135deg,#210b18,#170912);
-}
-.screen {
-  border: 1px solid #633047;
-  border-radius: 16px;
-  padding: 22px;
-  text-align: center;
-  margin-bottom: 22px;
-}
-.screen-visual {
-  width: min(650px,100%);
-  aspect-ratio: 16/9;
-  margin: 22px auto;
-  display: grid;
-  place-items: center;
-  border: 5px solid #49313d;
-  background:
-    radial-gradient(circle at 70% 30%,#b45a83,transparent 25%),
-    linear-gradient(135deg,#6b2445,#251128 55%,#100b19);
-  box-shadow: 0 0 35px #a52b5233;
-}
-.screen-visual span {
-  font-size: clamp(22px,5vw,40px);
-  font-weight: 900;
-  line-height: 1.2;
-}
-.booking {
-  background: linear-gradient(135deg,#351326,#180a12);
-  border: 1px solid #78405a;
-  border-radius: 18px;
-  padding: clamp(22px,5vw,38px);
-}
-.price { font-size: clamp(48px,8vw,68px); font-weight: 900; }
-footer {
-  border-top: 1px solid var(--line);
-  padding: 25px 0;
-  color: var(--muted);
-  font-size: 13px;
-}
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-@media(max-width:760px) {
-  .nav { align-items: flex-start; flex-direction: column; }
-  .grid, .two-col { grid-template-columns: 1fr; }
-  .hero { min-height: 0; }
-  section { padding: 55px 0; }
-}
-@media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior: auto; }
-}
-
-.schedule-list { margin-top: 18px; }
-.schedule-row { display:flex; justify-content:space-between; gap:16px; padding:13px 15px; border-bottom:1px solid var(--line); }
-.schedule-row:last-child { border-bottom:0; }
-.schedule-row span { color:var(--pink); font-weight:bold; text-align:right; }
-.schedule-note { margin:18px 0 0; font-size:13px; }
-.schedule-events { margin-top:20px; }
-@media(max-width:480px) { .schedule-row { padding:12px 8px; font-size:14px; } }
-
-.gallery-placeholder{min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;padding:20px;border:1px dashed #92506c;border-radius:12px;background:radial-gradient(circle at 50% 40%,#57223c,#1a0b13 72%);color:var(--pink)}
-.gallery-placeholder span{color:var(--muted);font-size:13px}
-.ticket-card{display:grid;grid-template-columns:1fr auto;border:1px solid #d16a91;border-radius:16px;overflow:hidden;background:linear-gradient(120deg,#3a1228,#170a13)}
-.ticket-main{padding:24px}.ticket-side{border-left:1px dashed #d16a91;padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:115px}
-.ticket-price{font-size:32px;font-weight:900;color:var(--pink)}
-.equalizer{min-height:180px;display:flex;align-items:center;justify-content:center;gap:8px;padding:24px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#28101e,#10070c)}
-.equalizer i{display:block;width:9px;border-radius:8px;background:linear-gradient(to top,#a52b52,#f09ab8)}
-@media(max-width:480px){.ticket-card{grid-template-columns:1fr}.ticket-side{border-left:0;border-top:1px dashed #d16a91}.equalizer{gap:5px}.equalizer i{width:6px}}
-
+:root{--bg:#100b0d;--surface:#191114;--surface2:#21151a;--ink:#f7f0f2;--muted:#b9a9af;--line:rgba(255,238,244,.12);--red:#c64a70;--rose:#f0a4ba;--gold:#d7b78b;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(16,11,13,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.navbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-size:15px;font-weight:800;letter-spacing:.13em}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(240,164,186,.4);border-radius:50%;color:var(--rose);font-size:19px}.brand small{display:block;color:var(--muted);font-size:9px;font-weight:500;letter-spacing:.22em;margin-top:2px}.navlinks{display:flex;align-items:center;gap:22px}.navlinks a{font-size:12px;color:#d0c1c6;transition:.2s}.navlinks a:hover{color:var(--rose)}.nav-cta{padding:10px 15px;border:1px solid rgba(240,164,186,.42);border-radius:4px;color:var(--rose)!important}
+.menu-toggle{display:none;background:none;color:var(--ink);border:1px solid var(--line);padding:8px 11px;border-radius:4px}
+.hero{position:relative;overflow:hidden;min-height:650px;display:flex;align-items:center;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 78% 44%,rgba(150,43,76,.23),transparent 34%),linear-gradient(110deg,#100b0d 15%,#1c1015 100%)}
+.hero:after{content:"";position:absolute;right:-120px;top:50px;width:min(53vw,650px);aspect-ratio:1;border:1px solid rgba(240,164,186,.13);border-radius:50%;box-shadow:0 0 0 55px rgba(240,164,186,.025),0 0 0 110px rgba(240,164,186,.02);pointer-events:none}
+.hero-inner{position:relative;z-index:1;padding:100px 0;max-width:790px}.kicker{display:flex;align-items:center;gap:12px;color:var(--rose);font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}.kicker:before{content:"";width:34px;height:1px;background:var(--rose)}
+h1{font-size:clamp(48px,8vw,94px);line-height:.99;letter-spacing:-.065em;margin:27px 0 24px;font-weight:750}h1 em{font-style:normal;color:var(--rose)}.hero-copy{max-width:590px;color:#c8b8be;font-size:17px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 19px;border:1px solid var(--red);background:var(--red);color:white;font-size:12px;font-weight:750;letter-spacing:.04em;border-radius:3px;transition:.2s}.btn:hover{background:#d35b80;transform:translateY(-2px)}.btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}.btn.ghost:hover{border-color:var(--rose);color:var(--rose)}
+.hero-note{margin-top:70px;display:flex;gap:32px;flex-wrap:wrap;color:#9f8e95;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.hero-note span{display:flex;align-items:center;gap:9px}.hero-note b{color:var(--rose);font-size:15px}
+section{padding:100px 0;border-bottom:1px solid var(--line)}.section-top{display:flex;justify-content:space-between;align-items:flex-end;gap:35px;margin-bottom:42px}.section-top>div:first-child{max-width:680px}.eyebrow{font-size:10px;letter-spacing:.23em;text-transform:uppercase;color:var(--rose);font-weight:750}.section-title{font-size:clamp(34px,5vw,58px);line-height:1.06;letter-spacing:-.045em;margin:13px 0 15px}.section-desc{max-width:620px;color:var(--muted);margin:0}.index{font-size:12px;color:#806b74;letter-spacing:.18em;white-space:nowrap}
+.intro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}.statement{padding:38px;background:linear-gradient(135deg,#281820,#171013);border:1px solid var(--line);min-height:270px}.statement h3{font-size:28px;line-height:1.2;letter-spacing:-.03em;margin:0 0 18px}.statement p{color:var(--muted);max-width:560px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fact{padding:23px;border:1px solid var(--line);background:rgba(255,255,255,.018)}.fact strong{display:block;color:var(--rose);font-size:25px;letter-spacing:-.04em}.fact span{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:27px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));min-height:205px;transition:.25s}.card:hover{border-color:rgba(240,164,186,.42);transform:translateY(-3px)}.card-icon{font-size:24px;color:var(--rose);margin-bottom:24px}.card-label{font-size:9px;letter-spacing:.18em;color:var(--rose);text-transform:uppercase}.card h3{font-size:18px;line-height:1.25;margin:9px 0}.card p{color:var(--muted);font-size:13px;margin:0}
+.band{background:#171014}.cinema-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}.screen-art{aspect-ratio:16/10;position:relative;display:grid;place-items:center;padding:24px;border:10px solid #33242a;background:radial-gradient(circle at 70% 32%,rgba(240,164,186,.42),transparent 22%),linear-gradient(135deg,#6c2944,#24151f 62%,#110d11);box-shadow:0 22px 65px rgba(0,0,0,.35)}.screen-art:before{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.2)}.screen-art strong{position:relative;text-align:center;font-size:clamp(24px,4vw,43px);line-height:1.05;letter-spacing:-.04em}.screen-caption{font-size:11px;color:#96858c;margin-top:12px}
+.equipment{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gear{border:1px solid var(--line);padding:24px;background:#171014}.gear-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.gear-symbol{font-size:25px}.gear-type{font-size:9px;color:var(--rose);letter-spacing:.17em}.gear h3{font-size:18px;margin:0 0 8px}.gear p{font-size:12px;color:var(--muted);margin:0}
+.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:13px}.gallery-tile{min-height:220px;border:1px dashed rgba(240,164,186,.35);background:radial-gradient(circle at 50% 40%,rgba(153,52,87,.23),transparent 55%),#191115;display:flex;flex-direction:column;justify-content:flex-end;padding:22px}.gallery-tile:first-child{min-height:280px}.gallery-tile strong{font-size:17px}.gallery-tile span{font-size:11px;color:var(--muted);margin-top:5px}.note{font-size:11px;color:#8f7f85;margin-top:15px}
+.soundwave{height:170px;display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);background:linear-gradient(90deg,#1b1115,#24151c,#1b1115);padding:20px}.soundwave i{display:block;width:8px;border-radius:5px;background:linear-gradient(to top,#9d3158,#f0a4ba);opacity:.85}
+.schedule{border:1px solid var(--line);background:#171014;padding:28px}.schedule-row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.schedule-row:last-child{border:0}.schedule-row span{color:var(--rose);font-weight:700;text-align:right}.disclaimer{font-size:11px;color:#9e8d94;margin:16px 0 0}
+.poster-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.poster{min-height:220px;padding:25px;border:1px solid var(--line);background:linear-gradient(150deg,#291722,#171014);display:flex;flex-direction:column;justify-content:space-between}.poster .poster-no{font-size:10px;letter-spacing:.2em;color:var(--rose)}.poster h3{font-size:25px;line-height:1.1;margin:15px 0}.poster p{font-size:12px;color:var(--muted);margin:0}.poster small{color:var(--gold);font-size:10px;letter-spacing:.1em;margin-top:18px}
+.ticket{display:grid;grid-template-columns:1fr auto;border:1px solid rgba(240,164,186,.45);background:linear-gradient(110deg,#2a1720,#171014);max-width:800px}.ticket-main{padding:32px}.ticket-main h3{font-size:28px;margin:13px 0 4px}.ticket-main p{font-size:12px;color:var(--muted)}.ticket-price{border-left:1px dashed rgba(240,164,186,.5);min-width:170px;padding:25px;display:flex;flex-direction:column;justify-content:center;align-items:center}.ticket-price strong{font-size:42px;color:var(--rose);letter-spacing:-.05em}.ticket-price span{font-size:9px;color:var(--muted);letter-spacing:.16em}
+.organizer{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.organizer-name{font-size:clamp(26px,4vw,42px);line-height:1.1;letter-spacing:-.04em;margin:14px 0}.contact-card{border:1px solid var(--line);padding:28px;background:#191115}.contact-card a.phone{font-size:22px;color:var(--rose);font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:steps}.step{padding:24px;border-top:1px solid var(--rose);background:#171014}.step b{font-size:25px;color:var(--rose)}.step h3{margin:13px 0 7px}.step p{font-size:12px;color:var(--muted);margin:0}
+.rules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.rule{padding:20px;border:1px solid var(--line);font-size:13px;color:#d6c8cd}.rule b{display:block;color:var(--rose);font-size:12px;margin-bottom:6px}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{padding:20px;border:1px solid var(--line);background:#171014}.faq summary{cursor:pointer;font-weight:700;font-size:13px}.faq details p{font-size:12px;color:var(--muted);margin:12px 0 0}
+.visit-box{padding:clamp(26px,5vw,52px);border:1px solid rgba(240,164,186,.32);background:radial-gradient(ellipse at 90% 0%,rgba(164,53,91,.2),transparent 45%),#1b1116}.visit-box h2{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.05em;max-width:650px}.visit-box p{max-width:620px;color:var(--muted)}.price-big{font-size:54px;color:var(--rose);font-weight:800;letter-spacing:-.06em;margin:14px 0}
+footer{padding:32px 0;color:#94848b;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer-brand{color:var(--ink);font-weight:800;letter-spacing:.12em}
+@media(max-width:900px){.navlinks{gap:12px}.navlinks a{font-size:11px}.cinema-layout,.organizer{grid-template-columns:1fr}.equipment{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.wrap{width:min(var(--max),calc(100% - 32px))}.navbar{height:68px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;padding:18px 22px 22px;background:#140d10;border-bottom:1px solid var(--line);grid-template-columns:1fr 1fr;gap:15px}.navlinks.open{display:grid}.navlinks a{font-size:13px}.nav-cta{grid-column:1/-1;text-align:center}.hero{min-height:590px}.hero-inner{padding:80px 0}.hero:after{width:80vw;right:-45vw;top:90px}.hero-note{margin-top:48px;gap:15px}.section-top{display:block}.index{display:block;margin-top:18px}.intro-grid,.cards,.poster-grid,.steps,.rules-grid,.faq{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-tile:first-child{grid-column:1/-1}.ticket{grid-template-columns:1fr}.ticket-price{border-left:0;border-top:1px dashed rgba(240,164,186,.5);align-items:flex-start}.ticket-price strong{font-size:36px}section{padding:72px 0}}
+@media(max-width:420px){h1{font-size:47px}.facts,.equipment,.gallery-grid{grid-template-columns:1fr}.gallery-tile:first-child{grid-column:auto}.hero-note{flex-direction:column}.actions .btn{width:100%}.schedule-row{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
-
 <body>
 <header>
-  <div class="container nav">
-    <a class="logo" href="#home">🍒 ЗИМНЯЯ <span class="pink">ВИШНЯ</span></a>
-    <nav aria-label="Навигация">
-    
-<a href="#about">О проекте</a>
-<a href="#gallery">Галерея</a>
-<a href="#cinema">Кино и игры</a>
-<a href="#equipment">Оборудование</a>
-<a href="#equipment">Каталог</a>
-<a href="#visualizer">Звуковая зона</a>
-<a href="#format">Формат</a>
-<a href="#schedule">Расписание</a>
-<a href="#poster">Афиша</a>
-<a href="#ticket">Билет</a>
-<a href="#rules">Правила</a>
-<a href="#faq">Вопросы</a>
-<a href="#visit">Посещение</a>
- 
-    </nav>
-  </div>
+ <div class="wrap navbar">
+  <a class="brand" href="#home"><span class="brand-mark">🍒</span><span>ЗИМНЯЯ ВИШНЯ<small>ЗВУК · КИНО · ИГРЫ</small></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navlinks">Меню ☰</button>
+  <nav class="navlinks" id="navlinks" aria-label="Основная навигация">
+   <a href="#about">О проекте</a><a href="#cinema">Кино и игры</a><a href="#equipment">Оборудование</a><a href="#gallery">Галерея</a><a href="#schedule">Расписание</a><a href="#rules">Правила</a><a class="nav-cta" href="#visit">Посещение ↗</a>
+  </nav>
+ </div>
 </header>
-
 <main>
-<section class="hero" id="home">
-  <div class="container">
-    <div class="eyebrow">Личное пространство · Алексеевка</div>
-    <h1>Зимняя Вишня — музыкально-кино пространство в <span>Алексеевке.</span></h1>
-    <p>
-      «Зимняя Вишня» — пространство, созданное вокруг любви к музыке,
-      кино, играм и настоящей технике. Большой экран, PlayStation 4 Pro
-      и мощная акустика объединяются в один мир звука и впечатлений.
-    </p>
-    <div class="actions">
-      <a class="btn" href="#cinema">Исследовать пространство ↓</a>
-      <a class="btn secondary" href="#equipment">Наше оборудование</a>
-    </div>
-  </div>
-</section>
+<section class="hero" id="home"><div class="wrap hero-inner">
+ <div class="kicker">Личное пространство · Алексеевка</div>
+ <h1>Территория<br><em>звука.</em><br>Кино. Игры.</h1>
+ <p class="hero-copy">«Зимняя Вишня» — личный проект, созданный вокруг любви к музыке, кино, видеоиграм и аудиотехнике. Пространство со своим характером и собственной историей.</p>
+ <div class="actions"><a class="btn" href="#about">Открыть проект <span>↘</span></a><a class="btn ghost" href="#equipment">Изучить оборудование</a></div>
+ <div class="hero-note"><span><b>01</b> Музыка и акустика</span><span><b>02</b> Кино на большом экране</span><span><b>03</b> Игры и впечатления</span></div>
+</div></section>
 
+<section id="about"><div class="wrap">
+ <div class="section-top"><div><div class="eyebrow">01 / Концепция</div><h2 class="section-title">Не просто помещение.<br><span style="color:var(--rose)">Своя атмосфера.</span></h2><p class="section-desc">Проект объединяет несколько увлечений в одном месте: звук, изображение, игры и техническую культуру. Каждая деталь постепенно становится частью «Зимней Вишни».</p></div><span class="index">О ПРОЕКТЕ</span></div>
+ <div class="intro-grid"><div class="statement"><div class="eyebrow">Идея проекта</div><h3>Пространство, в котором техника становится частью впечатления.</h3><p>От источника сигнала до акустики, от проектора до игрового экрана — здесь важны не только устройства, но и то, как они работают вместе.</p></div><div class="facts"><div class="fact"><strong>≈ 130 м²</strong><span>Площадь цокольного этажа</span></div><div class="fact"><strong>PS4 Pro</strong><span>Игровая система</span></div><div class="fact"><strong>Проектор</strong><span>Большое изображение</span></div><div class="fact"><strong>Аудио</strong><span>Акустика и оборудование</span></div></div></div>
+</div></section>
 
-<section id="about">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Больше, чем комната</div>
-      <h2>Место, где техника оживает в деталях</h2>
-      <p class="intro">
-        У «Зимней Вишни» свой характер: мощное звучание, большое
-        изображение, любимые игры и особая атмосфера цокольного этажа.
-      </p>
-    </div>
+<section class="band" id="cinema"><div class="wrap"><div class="section-top"><div><div class="eyebrow">02 / Развлечения</div><h2 class="section-title">Кино и игры<br>на большом экране.</h2><p class="section-desc">Проектор, экран и PlayStation 4 Pro — основа визуальной части проекта. Конкретные фильмы и игровые программы согласуются отдельно.</p></div><span class="index">ИЗОБРАЖЕНИЕ</span></div>
+ <div class="cinema-layout"><div><div class="screen-art"><strong>СМОТРИ.<br>ИГРАЙ.<br><span style="color:var(--rose)">ПОГРУЖАЙСЯ.</span></strong></div><div class="screen-caption">Стилизованная иллюстрация концепции экрана, не фотография помещения.</div></div><div class="cards" style="grid-template-columns:1fr"><article class="card"><div class="card-icon">▣</div><h3>Киноформат</h3><p>Просмотр фильмов и другого видеоконтента через проектор.</p></article><article class="card"><div class="card-icon">⌁</div><h3>Игровая зона</h3><p>PlayStation 4 Pro и игры на большом изображении.</p></article></div></div>
+</div></section>
 
-    <div class="two-col">
-      <div class="panel">
-        <h3>Не просто включить музыку. <span class="pink">Почувствовать её.</span></h3>
-        <p class="muted">
-          Здесь важна каждая составляющая: источник сигнала, усиление,
-          акустика и само помещение. Кино захватывает изображением,
-          игры погружают в происходящее, а музыка наполняет пространство
-          настроением.
-        </p>
-      </div>
-      <div class="panel">
-        <div class="stat"><strong>≈ 130 м²</strong>Площадь цокольного этажа</div>
-        <div class="stat"><strong>Большой экран</strong>Проекция на стену</div>
-        <div class="stat"><strong>PlayStation 4 Pro</strong>Игровая зона</div>
-        <div class="stat"><strong>Мощная акустика</strong>Отдельная звуковая система</div>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="equipment"><div class="wrap"><div class="section-top"><div><div class="eyebrow">03 / Техническая база</div><h2 class="section-title">Оборудование<br><span style="color:var(--rose)">проекта.</span></h2><p class="section-desc">Основные устройства, связанные со звуком, изображением и играми. Указаны только известные модели и типы оборудования.</p></div><span class="index">ТЕХНИЧЕСКИЙ КАТАЛОГ</span></div>
+ <div class="equipment">
+  <article class="gear"><div class="gear-top"><span class="gear-symbol">◉</span><span class="gear-type">НИЗКОЧАСТОТНАЯ СИСТЕМА</span></div><h3>EUROSOUND FOCUS 1100A</h3><p>Активный сабвуфер звуковой системы.</p></article>
+  <article class="gear"><div class="gear-top"><span class="gear-symbol">◖</span><span class="gear-type">АКУСТИКА</span></div><h3>Radiotehnika S-90</h3><p>Акустические системы для воспроизведения музыки.</p></article>
+  <article class="gear"><div class="gear-top"><span class="gear-symbol">⌁</span><span class="gear-type">АУДИОУПРАВЛЕНИЕ</span></div><h3>Invotone SP 106M</h3><p>Микшерный компонент аудиосистемы.</p></article>
+  <article class="gear"><div class="gear-top"><span class="gear-symbol">▣</span><span class="gear-type">ИГРОВАЯ СИСТЕМА</span></div><h3>PlayStation 4 Pro</h3><p>Игровая консоль для интерактивных развлечений.</p></article>
+  <article class="gear"><div class="gear-top"><span class="gear-symbol">▱</span><span class="gear-type">ВИДЕОСИСТЕМА</span></div><h3>Проектор и экран</h3><p>Оборудование для вывода изображения.</p></article>
+ </div>
+</div></section>
 
-<section id="gallery"><div class="container"><div class="section-head"><div class="eyebrow">Пространство в деталях</div><h2>Фотогалерея <span class="pink">«Зимняя Вишня»</span></h2><p class="intro">Здесь будут настоящие фотографии цокольного этажа, оборудования и этапов обновления проекта.</p></div><div class="grid"><div class="gallery-placeholder"><strong>🏠 Помещение</strong><span>Фотографии интерьера появятся здесь</span></div><div class="gallery-placeholder"><strong>🔊 Акустика</strong><span>Фотографии колонок и сабвуфера появятся здесь</span></div><div class="gallery-placeholder"><strong>🎬 Кино и экран</strong><span>Фотографии проектора и экрана появятся здесь</span></div></div><p class="muted" style="margin-top:16px">Это места для будущих фотографий, а не изображения готового ремонта.</p></div></section>
+<section class="band" id="gallery"><div class="wrap"><div class="section-top"><div><div class="eyebrow">04 / Визуальная история</div><h2 class="section-title">Пространство<br>в деталях.</h2><p class="section-desc">Галерея будет пополняться настоящими фотографиями помещения, оборудования и этапов развития проекта.</p></div><span class="index">ГАЛЕРЕЯ</span></div>
+ <div class="gallery-grid"><div class="gallery-tile"><strong>Помещение</strong><span>Здесь появятся реальные фотографии интерьера</span></div><div class="gallery-tile"><strong>Акустика</strong><span>Колонки и аудиосистема</span></div><div class="gallery-tile"><strong>Кино и игры</strong><span>Проектор, экран и игровая зона</span></div></div><p class="note">Пока это макеты будущих фотоблоков, а не изображения готового ремонта.</p>
+</div></section>
 
-<section class="dark-section" id="cinema">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Большое изображение</div>
-      <h2>Кино и игры — на большом масштабе</h2>
-      <p class="intro">
-        Проектор выводит изображение на стену, превращая её в центр
-        просмотра. Здесь можно погрузиться в фильм, открыть игровой мир
-        или включить любимый контент.
-      </p>
-    </div>
+<section id="sound"><div class="wrap"><div class="section-top"><div><div class="eyebrow">05 / Звучание</div><h2 class="section-title">Звук — в центре<br><span style="color:var(--rose)">внимания.</span></h2><p class="section-desc">Акустика, микшерное оборудование и работа с аудиосигналом — важная часть идеи «Зимней Вишни».</p></div><span class="index">АУДИОЗОНА</span></div>
+ <div class="soundwave" role="img" aria-label="Декоративная графическая звуковая волна"><i style="height:25px"></i><i style="height:52px"></i><i style="height:82px"></i><i style="height:46px"></i><i style="height:112px"></i><i style="height:72px"></i><i style="height:135px"></i><i style="height:91px"></i><i style="height:59px"></i><i style="height:120px"></i><i style="height:78px"></i><i style="height:42px"></i><i style="height:100px"></i><i style="height:61px"></i><i style="height:31px"></i></div><p class="note">Графика декоративная: она не подключена к аудиосигналу и не измеряет громкость.</p>
+</div></section>
 
-    <div class="screen">
-      <span class="tag">ПРОЕКТОР · БОЛЬШОЙ ЭКРАН</span>
-      <div class="screen-visual" role="img" aria-label="Стилизованная иллюстрация экрана">
-        <span>ТВОЙ МИР.<br>БОЛЬШОЙ ЭКРАН.</span>
-      </div>
-      <p class="muted">Иллюстрация концепции экрана, а не фотография реальной проекции.</p>
-    </div>
+<section class="band" id="schedule"><div class="wrap"><div class="section-top"><div><div class="eyebrow">06 / Планирование</div><h2 class="section-title">Время для<br>встречи.</h2><p class="section-desc">Ниже указано предварительное расписание. Любое посещение необходимо заранее согласовать с организатором.</p></div><span class="index">РАСПИСАНИЕ</span></div>
+ <div class="schedule"><div class="schedule-row"><strong>Понедельник</strong><span>Выходной</span></div><div class="schedule-row"><strong>Вторник — четверг</strong><span>16:00–21:00</span></div><div class="schedule-row"><strong>Пятница</strong><span>16:00–23:00</span></div><div class="schedule-row"><strong>Суббота</strong><span>12:00–23:00</span></div><div class="schedule-row"><strong>Воскресенье</strong><span>12:00–21:00</span></div><p class="disclaimer">График предварительный, может меняться. Время визита подтверждается организатором отдельно.</p></div>
+</div></section>
 
-    <div class="grid">
-      <article class="card">
-        <div class="symbol">🎬</div>
-        <h3>Домашний кинотеатр</h3>
-        <p>Большое изображение, приглушённый свет и звук для полного погружения в фильм.</p>
-      </article>
-      <article class="card">
-        <div class="symbol">🎮</div>
-        <h3>PlayStation 4 Pro</h3>
-        <p>Открытые миры, экшен, гонки и приключения на большом экране.</p>
-      </article>
-      <article class="card">
-        <div class="symbol">🔊</div>
-        <h3>Звук в пространстве</h3>
-        <p>Музыка и игровые эффекты становятся важной частью общего впечатления.</p>
-      </article>
-    </div>
-  </div>
-</section>
+<section id="poster"><div class="wrap"><div class="section-top"><div><div class="eyebrow">07 / События</div><h2 class="section-title">Афиша<br><span style="color:var(--rose)">«Зимней Вишни».</span></h2><p class="section-desc">Здесь будут появляться анонсы встреч, просмотров и игровых вечеров. Конкретные даты и программы пока не объявлены.</p></div><span class="index">АНОНСЫ</span></div>
+ <div class="poster-grid"><article class="poster"><div><span class="poster-no">EVENT / 01</span><h3>Киновечер</h3><p>Фильм на большом экране.</p></div><small>ДАТА УТОЧНЯЕТСЯ</small></article><article class="poster"><div><span class="poster-no">EVENT / 02</span><h3>Игровой вечер</h3><p>Встреча за PlayStation 4 Pro.</p></div><small>ДАТА УТОЧНЯЕТСЯ</small></article><article class="poster"><div><span class="poster-no">EVENT / 03</span><h3>Музыкальный вечер</h3><p>Музыка и знакомство со звуковой системой.</p></div><small>ДАТА УТОЧНЯЕТСЯ</small></article></div>
+</div></section>
 
-<section id="equipment" class="dark-section"><div class="container"><div class="section-head"><div class="eyebrow">Техническая сторона проекта</div><h2>Каталог <span class="pink">оборудования</span></h2><p class="intro">Основные устройства пространства. Неподтверждённые технические характеристики не указываются.</p></div><div class="grid"><article class="card"><div class="symbol">🔊</div><span class="tag">САБВУФЕР</span><h3>EUROSOUND FOCUS 1100A</h3><p>Активный сабвуфер звуковой системы.</p></article><article class="card"><div class="symbol">🎵</div><span class="tag">АКУСТИКА</span><h3>Radiotehnika S-90</h3><p>Акустические системы для прослушивания музыки.</p></article><article class="card"><div class="symbol">🎚️</div><span class="tag">МИКШЕР</span><h3>Invotone SP 106M</h3><p>Компонент для подключения и управления аудиосигналом.</p></article><article class="card"><div class="symbol">🎮</div><span class="tag">ИГРОВАЯ СИСТЕМА</span><h3>PlayStation 4 Pro</h3><p>Игровая консоль для встреч и развлечений на большом экране.</p></article><article class="card"><div class="symbol">📽️</div><span class="tag">ИЗОБРАЖЕНИЕ</span><h3>Проектор и экран</h3><p>Система проекции для фильмов и игр.</p></article></div></div></section>
-<section id="visualizer"><div class="container"><div class="section-head"><div class="eyebrow">Музыка — часть атмосферы</div><h2>Звуковая <span class="pink">зона</span></h2><p class="intro">Фирменная графическая звуковая волна «Зимней Вишни».</p></div><div class="equalizer" role="img" aria-label="Декоративная графическая звуковая волна"><i style="height:34px"></i><i style="height:58px"></i><i style="height:92px"></i><i style="height:65px"></i><i style="height:125px"></i><i style="height:84px"></i><i style="height:150px"></i><i style="height:105px"></i><i style="height:70px"></i><i style="height:132px"></i><i style="height:92px"></i><i style="height:48px"></i><i style="height:112px"></i><i style="height:74px"></i><i style="height:38px"></i></div><p class="muted" style="margin-top:12px">Это декоративная графика: она не подключена к аудиосигналу и не измеряет громкость.</p></div></section>
+<section class="band" id="rules"><div class="wrap"><div class="section-top"><div><div class="eyebrow">08 / Договорённости</div><h2 class="section-title">Уважение к людям.<br>Бережность к технике.</h2><p class="section-desc">Простые правила помогают сохранить комфорт и порядок во время посещения.</p></div><span class="index">ПРАВИЛА</span></div>
+ <div class="rules-grid"><div class="rule"><b>01 · Запись</b>Сначала согласуй время визита с организатором.</div><div class="rule"><b>02 · Громкость</b>Учитывай время суток и окружающих, соблюдай просьбы организатора.</div><div class="rule"><b>03 · Оборудование</b>Не переключай кабели и настройки без разрешения.</div><div class="rule"><b>04 · Аккуратность</b>Держи напитки и еду подальше от аппаратуры.</div><div class="rule"><b>05 · Чистота</b>В помещении не курят и не используют электронные сигареты.</div><div class="rule"><b>06 · Уважение</b>Бережно относись к помещению, вещам и другим посетителям.</div></div>
+</div></section>
 
+<section id="organizer"><div class="wrap"><div class="section-top"><div><div class="eyebrow">09 / Автор проекта</div><h2 class="section-title">За проектом<br>стоит человек.</h2><p class="section-desc">«Зимняя Вишня» развивается как личный проект, объединяющий интерес к аудиотехнике, кино и игровым системам.</p></div><span class="index">ОСНОВАТЕЛЬ</span></div>
+ <div class="organizer"><div><div class="eyebrow">Основатель и организатор</div><div class="organizer-name">Токарь Антон Александрович</div><p class="section-desc">Развитие идеи, техническое оснащение и организация посещений пространства.</p></div><div class="contact-card"><div class="eyebrow">Связь с организатором</div><p style="color:var(--muted);font-size:12px">По вопросам посещения и предварительной записи</p><a class="phone" href="tel:+79202036007">+7 920 203-60-07</a><div class="actions"><a class="btn" href="tel:+79202036007">Позвонить ↗</a></div></div></div>
+</div></section>
 
-<section class="dark-section" id="atmosphere">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Характер пространства</div>
-      <h2>Цокольный этаж со своей атмосферой</h2>
-      <p class="intro">
-        Около 130 квадратных метров, низкие потолки, плиточный пол,
-        оборудование и отдельное пространство для музыки и развлечений.
-      </p>
-    </div>
+<section id="visit"><div class="wrap"><div class="visit-box"><div class="eyebrow">10 / Посещение</div><h2>Твой следующий вечер может начаться здесь.</h2><p>Оставь заявку через форму. Укажи имя, количество билетов и удобную дату. Организатор свяжется с тобой для согласования времени.</p><div class="price-big">99 ₽ <span style="font-size:13px;color:var(--muted);font-weight:500;letter-spacing:0">/ одно посещение</span></div><p>Место: Алексеевка, Белгородская область. Точный адрес сообщается после согласования визита.</p><div class="actions"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe0nZw6Z3axcu-mOgRDxh2fqkiTjYSMvLFhPIVN2fD9HIwoLA/viewform?usp=preview" target="_blank" rel="noopener noreferrer">Оставить заявку ↗</a><a class="btn ghost" href="tel:+79202036007">Связаться напрямую</a></div><p class="disclaimer">Отправка формы не означает автоматического подтверждения записи или оплаты. Время посещения согласуется отдельно.</p></div></div></section>
 
-    <div class="grid">
-      <article class="card">
-        <div class="symbol">🏠</div>
-        <h3>Особенное помещение</h3>
-        <p>Архитектура и размеры комнаты учитываются при размещении акустики и проектора.</p>
-      </article>
-      <article class="card">
-        <div class="symbol">〰️</div>
-        <h3>Звуковая зона</h3>
-        <p>Расположение колонок и слушателя влияет на итоговое звучание системы.</p>
-      </article>
-      <article class="card">
-        <div class="symbol">🍒</div>
-        <h3>Всё в одном месте</h3>
-        <p>Музыка, кино, игры и любимая техника — личный мир звука и впечатлений.</p>
-      </article>
-    </div>
-  </div>
-</section>
-<section id="organizer" class="dark-section">
-  <div class="container">
-    <div class="panel">
-      <p class="eyebrow">ЗИМНЯЯ ВИШНЯ</p>
+<section id="ticket"><div class="wrap"><div class="section-top"><div><div class="eyebrow">11 / Билет</div><h2 class="section-title">Входной билет<br><span style="color:var(--rose)">«Зимняя Вишня».</span></h2><p class="section-desc">Информационный макет стоимости одного посещения. Не является подтверждением бронирования.</p></div><span class="index">99 РУБЛЕЙ</span></div>
+ <div class="ticket"><div class="ticket-main"><div class="eyebrow">Личное музыкально-кино пространство</div><h3>🍒 ЗИМНЯЯ ВИШНЯ</h3><p>Алексеевка · Одно посещение</p><p>Организатор: Токарь Антон Александрович</p></div><div class="ticket-price"><span>СТОИМОСТЬ</span><strong>99 ₽</strong><span>ОДИН ВИЗИТ</span></div></div>
+</div></section>
 
-      <h2>Организатор проекта</h2>
-
-      <div class="card">
-        <h3>Токарь Антон Александрович</h3>
-
-        <p>
-          Организатор пространства «Зимняя Вишня»,
-          отвечающий за развитие проекта,
-          техническое оснащение и организацию посещений.
-        </p>
-
-        <p class="organizer-phone">
-          <strong>Телефон для связи:</strong><br>
-          <a href="tel:+79202036007">
-            +7 920 203-60-07
-          </a>
-        </p>
-
-        <a class="button" href="tel:+79202036007">
-          Позвонить организатору
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ПРЕДВАРИТЕЛЬНОЕ РАСПИСАНИЕ -->
-
-<!-- ПРАВИЛА ПРОСТРАНСТВА -->
-
-<!-- АФИША МЕРОПРИЯТИЙ -->
-
-
-
-<section id="rules">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Комфорт начинается с уважения</div>
-      <h2>Правила <span class="pink">«Зимней Вишни»</span></h2>
-      <p class="intro">Несколько простых договорённостей, чтобы всем было удобно, а техника и помещение оставались в порядке.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <div class="symbol">📅</div>
-        <h3>Сначала согласуем визит</h3>
-        <p>Перед приездом отправь заявку и дождись подтверждения времени от организатора.</p>
-      </article>
-      <article class="card">
-        <div class="symbol">🔊</div>
-        <h3>Уважаем звук и соседей</h3>
-        <p>Громкость музыки и акустики регулируется с учётом времени и окружающих.</p>
-      </article>
-      <article class="card">
-        <div class="symbol">🎛️</div>
-        <h3>Бережём оборудование</h3>
-        <p>Не переключай кабели, усилители и настройки без согласования с организатором.</p>
-      </article>
-      <article class="card">
-        <div class="symbol">🥤</div>
-        <h3>Аккуратность важна</h3>
-        <p>Держи напитки и еду подальше от колонок, проводов, проекторов и другой техники.</p>
-      </article>
-      <article class="card">
-        <div class="symbol">🚭</div>
-        <h3>Чистое пространство</h3>
-        <p>В помещении не курят и не используют электронные сигареты. После себя оставляют порядок.</p>
-      </article>
-      <article class="card">
-        <div class="symbol">🤝</div>
-        <h3>Относимся друг к другу уважительно</h3>
-        <p>Соблюдаем договорённости, бережно относимся к чужим вещам и выполняем просьбы организатора.</p>
-      </article>
-    </div>
-    <p class="muted" style="margin-top:20px">Организатор может заранее уточнить дополнительные условия конкретного мероприятия.</p>
-    <div class="actions">
-      <a class="btn" href="#visit">Оставить заявку ↓</a>
-      <a class="btn secondary" href="#faq">Частые вопросы</a>
-    </div>
-  </div>
-</section>
-
-<section id="schedule" class="dark-section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Планируй свой визит</div>
-      <h2>Расписание и <span class="pink">график работы</span></h2>
-      <p class="intro">Предварительное расписание пространства. Посещение возможно только после согласования времени с организатором.</p>
-    </div>
-    <div class="panel">
-      <h3>🕒 Предварительный график</h3>
-      <div class="schedule-list">
-        <div class="schedule-row"><strong>Понедельник</strong><span>Выходной</span></div>
-        <div class="schedule-row"><strong>Вторник</strong><span>16:00–21:00</span></div>
-        <div class="schedule-row"><strong>Среда</strong><span>16:00–21:00</span></div>
-        <div class="schedule-row"><strong>Четверг</strong><span>16:00–21:00</span></div>
-        <div class="schedule-row"><strong>Пятница</strong><span>16:00–23:00</span></div>
-        <div class="schedule-row"><strong>Суббота</strong><span>12:00–23:00</span></div>
-        <div class="schedule-row"><strong>Воскресенье</strong><span>12:00–21:00</span></div>
-      </div>
-      <p class="muted schedule-note">Время указано предварительно и может меняться. Каждый визит необходимо заранее согласовать с организатором.</p>
-    </div>
-    <div class="actions">
-      <a class="btn" href="#visit">Оставить заявку ↓</a>
-      <a class="btn secondary" href="tel:+79202036007">Связаться с организатором</a>
-    </div>
-  </div>
-</section>
-
-<section id="poster" class="dark-section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">События пространства</div>
-      <h2>Афиша <span class="pink">«Зимней Вишни»</span></h2>
-      <p class="intro">Здесь будут появляться анонсы киносеансов, игровых и музыкальных вечеров. Даты и время публикуются после согласования.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <div class="symbol">🎬</div>
-        <span class="tag">СКОРО В АФИШЕ</span>
-        <h3>Киновечер</h3>
-        <p>Просмотр фильма на большом экране. Название, дата и время будут объявлены отдельно.</p>
-        <p class="pink"><strong>Дата: уточняется</strong></p>
-      </article>
-      <article class="card">
-        <div class="symbol">🎮</div>
-        <span class="tag">СКОРО В АФИШЕ</span>
-        <h3>Игровой вечер</h3>
-        <p>Встреча для любителей видеоигр на PlayStation 4 Pro. Игры и время согласуются заранее.</p>
-        <p class="pink"><strong>Дата: уточняется</strong></p>
-      </article>
-      <article class="card">
-        <div class="symbol">🎵</div>
-        <span class="tag">СКОРО В АФИШЕ</span>
-        <h3>Музыкальный вечер</h3>
-        <p>Вечер музыки и звучания акустической системы «Зимней Вишни».</p>
-        <p class="pink"><strong>Дата: уточняется</strong></p>
-      </article>
-    </div>
-    <div class="panel" style="margin-top:20px">
-      <h3>📢 Следи за обновлениями</h3>
-      <p class="muted">Пока конкретные мероприятия и даты не объявлены. Перед посещением отправь заявку и дождись подтверждения организатора.</p>
-      <div class="actions">
-        <a class="btn" href="#visit">Оставить заявку ↓</a>
-        <a class="btn secondary" href="tel:+79202036007">Связаться с организатором</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="ticket" class="dark-section"><div class="container"><div class="section-head"><div class="eyebrow">Вход в пространство</div><h2>Билет <span class="pink">«Зимняя Вишня»</span></h2><p class="intro">Макет билета с информацией о стоимости одного посещения. Он не заменяет подтверждение записи.</p></div><div class="ticket-card"><div class="ticket-main"><div class="eyebrow">Личное музыкально-кино пространство</div><h3 style="font-size:26px;margin:12px 0">🍒 ЗИМНЯЯ ВИШНЯ</h3><p class="muted">Алексеевка · Один визит</p><p>Посещение — после предварительного согласования.</p><p class="muted" style="font-size:13px">Организатор: Токарь Антон Александрович</p></div><div class="ticket-side"><span class="muted">СТОИМОСТЬ</span><div class="ticket-price">99 ₽</div><span class="muted">1 посещение</span></div></div><div class="actions"><a class="btn" href="#visit">Оставить заявку ↓</a><a class="btn secondary" href="tel:+79202036007">Связаться с организатором</a></div></div></section>
-
-<section id="visit">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Твой вечер начинается здесь</div>
-      <h2>Билет в мир <span class="pink">«Зимней Вишни»</span></h2>
-      <p class="intro">
-        Большой экран, PlayStation 4 Pro и акустика.
-        Хочешь посетить пространство? Отправь заявку через форму.
-      </p>
-    </div>
-
-    <div class="booking">
-      <div class="eyebrow">Стоимость входа</div>
-      <div class="price">99 ₽</div>
-      <p class="muted">за один билет</p>
-      <hr style="border:0;border-top:1px solid var(--line);margin:24px 0">
-      <h3>📍 Алексеевка</h3>
-      <p class="muted">
-        Точный адрес сообщается посетителям после согласования посещения.
-      </p>
-      <h3>🎟️ Оставить заявку</h3>
-      <p class="muted">
-        Укажи имя, количество билетов и удобную дату в форме бронирования.
-        Заявка не означает автоматического подтверждения или оплаты.
-      </p>
-      <a class="btn"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSe0nZw6Z3axcu-mOgRDxh2fqkiTjYSMvLFhPIVN2fD9HIwoLA/viewform?usp=preview"
-         target="_blank"
-         rel="noopener noreferrer">
-        🎟️ Забронировать билет →
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ФОРМАТ ПОСЕЩЕНИЯ -->
-<section id="format">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Твой визит начинается здесь</div>
-      <h2>Как посетить <span class="pink">«Зимнюю Вишню»</span></h2>
-      <p class="intro">
-        Выбери удобное время, отправь заявку и дождись подтверждения.
-        Каждый визит согласуется заранее.
-      </p>
-    </div>
-
-    <div class="grid">
-      <article class="card">
-        <div class="symbol">01</div>
-        <h3>Оставь заявку</h3>
-        <p>Заполни форму и укажи удобное время посещения.</p>
-      </article>
-
-      <article class="card">
-        <div class="symbol">02</div>
-        <h3>Получи подтверждение</h3>
-        <p>Дождись ответа организатора. Отправка формы сама по себе не подтверждает запись.</p>
-      </article>
-
-      <article class="card">
-        <div class="symbol">03</div>
-        <h3>Наслаждайся атмосферой</h3>
-        <p>После согласования уточни детали визита и доступное оборудование.</p>
-      </article>
-    </div>
-
-    <div class="actions">
-      <a class="btn" href="#visit">Оставить заявку ↓</a>
-      <a class="btn secondary" href="#faq">Частые вопросы</a>
-    </div>
-  </div>
-</section>
-
-<!-- ЧАСТЫЕ ВОПРОСЫ -->
-<section id="faq" class="dark-section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Всё самое важное</div>
-      <h2>Частые вопросы</h2>
-      <p class="intro">
-        Коротко о проекте, оборудовании и посещении.
-      </p>
-    </div>
-
-    <div class="two-col">
-      <article class="card">
-        <h3>Где находится проект?</h3>
-        <p>«Зимняя Вишня» находится в Алексеевке Белгородской области. Подробности визита согласуются заранее.</p>
-      </article>
-
-      <article class="card">
-        <h3>Сколько стоит посещение?</h3>
-        <p>На сайте указана стоимость 99 ₽ за одно посещение. Перед визитом уточни актуальные условия у организатора.</p>
-      </article>
-
-      <article class="card">
-        <h3>Можно ли прийти без записи?</h3>
-        <p>Посещение планируется по предварительному согласованию. Сначала отправь заявку.</p>
-      </article>
-
-      <article class="card">
-        <h3>Какое оборудование есть?</h3>
-        <p>В проекте используются проектор, экран, PlayStation 4 Pro, акустика Radiotehnika S-90, сабвуфер EUROSOUND FOCUS 1100A и аудиооборудование Invotone SP 106M.</p>
-      </article>
-
-      <article class="card">
-        <h3>Можно ли выбрать фильм или игру?</h3>
-        <p>Предпочтения можно указать в заявке. Доступность конкретной игры или программы нужно согласовать отдельно.</p>
-      </article>
-
-      <article class="card">
-        <h3>Подтверждается ли запись автоматически?</h3>
-        <p>Нет. Организатор должен отдельно подтвердить время посещения.</p>
-      </article>
-    </div>
-
-    <div class="actions">
-      <a class="btn" href="#visit">Перейти к заявке ↓</a>
-      <a class="btn secondary" href="#home">На главную ↑</a>
-    </div>
-  </div>
-</section>
-
-<section class="dark-section" style="text-align:center">
-  <div class="container">
-    <div class="eyebrow">Зимняя Вишня</div>
-    <h2>У каждого звука своя история.<br><span class="pink">У каждого пространства — душа.</span></h2>
-    <p class="intro" style="margin:0 auto 25px">
-      Личный проект, который развивается вместе с идеями,
-      оборудованием и любовью к хорошему звуку.
-    </p>
-    <a class="btn secondary" href="#home">Вернуться наверх ↑</a>
-  </div>
-</section>
+<section class="band" id="faq"><div class="wrap"><div class="section-top"><div><div class="eyebrow">12 / Информация</div><h2 class="section-title">Частые вопросы.</h2></div><span class="index">FAQ</span></div>
+ <div class="faq"><details><summary>Где находится «Зимняя Вишня»?</summary><p>В Алексеевке Белгородской области. Точный адрес сообщается после согласования посещения.</p></details><details><summary>Сколько стоит посещение?</summary><p>На сайте указана стоимость 99 ₽ за одно посещение. Актуальные условия можно уточнить у организатора.</p></details><details><summary>Можно ли прийти без записи?</summary><p>Нет, посещение планируется по предварительному согласованию.</p></details><details><summary>Какое оборудование представлено?</summary><p>В проекте указаны Radiotehnika S-90, EUROSOUND FOCUS 1100A, Invotone SP 106M, PlayStation 4 Pro, проектор и экран.</p></details><details><summary>Можно ли выбрать фильм или игру?</summary><p>Пожелания можно обсудить с организатором. Доступность конкретного контента согласуется отдельно.</p></details><details><summary>Заявка подтверждается автоматически?</summary><p>Нет. После отправки формы нужно дождаться отдельного подтверждения от организатора.</p></details></div>
+</div></section>
 </main>
-
-<footer>
-  <div class="container footer-inner">
-    <strong style="color:var(--white)">🍒 Зимняя Вишня</strong>
-    <span>Алексеевка · Личный проект</span>
-    <span>© <span id="year"></span> Зимняя Вишня</span>
-  </div>
-</footer>
-
+<footer><div class="wrap footer-inner"><span class="footer-brand">🍒 ЗИМНЯЯ ВИШНЯ</span><span>Алексеевка · Личный проект</span><span>Организатор: Токарь Антон Александрович</span><span>© <span id="year"></span></span></div></footer>
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+const toggle=document.getElementById('menuToggle');
+const nav=document.getElementById('navlinks');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'Закрыть ×':'Меню ☰'});
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='Меню ☰'}));
+document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
