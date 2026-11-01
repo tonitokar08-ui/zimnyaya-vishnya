@@ -91,6 +91,12 @@ body.club-mode .soundwave i{animation-duration:.62s;filter:drop-shadow(0 0 7px r
 .soundwave.is-live i{animation-duration:.42s!important;filter:drop-shadow(0 0 8px rgba(240,164,186,.75))}
 @media(prefers-reduced-motion:reduce){.splash-screen,.splash-inner,.splash-cherry,.splash-line{animation:none!important;transition:none!important}}
 
+.music-player{margin-top:24px;padding:22px;border:1px solid rgba(240,164,186,.3);background:linear-gradient(135deg,#24141c,#151014)}
+.music-player h3{margin:0 0 8px;font-size:20px}
+.music-player p{margin:0 0 16px;color:var(--muted);font-size:12px}
+.music-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);background:#090709}
+.music-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
 </style>
 </head>
 <body>
@@ -140,7 +146,9 @@ body.club-mode .soundwave i{animation-duration:.62s;filter:drop-shadow(0 0 7px r
 
 <section id="sound"><div class="wrap"><div class="section-top"><div><div class="eyebrow">05 / Звучание</div><h2 class="section-title">Звук — в центре<br><span style="color:var(--rose)">внимания.</span></h2><p class="section-desc">Акустика, микшерное оборудование и работа с аудиосигналом — важная часть идеи «Зимней Вишни».</p></div><span class="index">АУДИОЗОНА</span></div>
  <div class="soundwave" id="soundwave" role="img" aria-label="Анимированная графическая звуковая волна"><i style="height:25px"></i><i style="height:52px"></i><i style="height:82px"></i><i style="height:46px"></i><i style="height:112px"></i><i style="height:72px"></i><i style="height:135px"></i><i style="height:91px"></i><i style="height:59px"></i><i style="height:120px"></i><i style="height:78px"></i><i style="height:42px"></i><i style="height:100px"></i><i style="height:61px"></i><i style="height:31px"></i></div>
- <div class="sound-control"><p>Запусти фирменную светомузыку «Зимней Вишни»: волна ускорится и заиграет новыми ритмами. Это визуальный эффект, не измеритель реального звука.</p><button id="waveToggle" type="button" aria-pressed="false">Запустить светомузыку</button></div><p class="note">Анимация работает прямо на странице и не использует микрофон.</p>
+ <div class="sound-control"><p>Запусти фирменную светомузыку «Зимней Вишни»: волна ускорится и заиграет новыми ритмами. Это визуальный эффект, не измеритель реального звука.</p><button id="waveToggle" type="button" aria-pressed="false">Запустить светомузыку</button></div>
+ <div class="music-player"><div class="eyebrow">Музыка проекта</div><h3>Фирменный трек «Зимней Вишни» 🍒</h3><p>Нажми воспроизведение, чтобы включить музыку. Плеер работает через YouTube.</p><div class="music-frame"><iframe src="https://www.youtube-nocookie.com/embed/wc2cgOoe5fA?rel=0" title="Музыка для проекта Зимняя Вишня" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+ <p class="note">Музыка воспроизводится официальным встроенным плеером YouTube; запуск — вручную по нажатию.</p>
 </div></section>
 
 <section class="band" id="schedule"><div class="wrap"><div class="section-top"><div><div class="eyebrow">06 / Планирование</div><h2 class="section-title">Время для<br>встречи.</h2><p class="section-desc">Ниже указано предварительное расписание. Любое посещение необходимо заранее согласовать с организатором.</p></div><span class="index">РАСПИСАНИЕ</span></div>
