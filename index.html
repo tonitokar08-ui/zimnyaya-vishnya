@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#10090d">
+<meta name="theme-color" content="#080508">
 <meta name="description" content="Зимняя Вишня — пространство звука, кино и игр в Алексеевке. Основатель и организатор: Токарь Антон Александрович.">
 <meta property="og:title" content="Зимняя Вишня — звук · кино · игры">
 <meta property="og:description" content="Личное пространство для музыки, кино и игр. Алексеевка, Белгородская область.">
-<title>Зимняя Вишня — пространство звука, кино и игр</title>
+<title>ЗИМНЯЯ ВИШНЯ — премиальное пространство звука, кино и игр</title>
 <style>
 :root{color-scheme:dark;--bg:#0d090b;--panel:#171014;--panel2:#21141a;--text:#f8f0f3;--muted:#b9a8af;--line:#39232d;--red:#a82d51;--ruby:#d34b70;--rose:#f0a9bd;--gold:#c9a779;--max:1180px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
@@ -38,16 +38,60 @@ footer{padding:30px 0;color:#9b8991;font-size:11px}.foot{display:flex;justify-co
 .qr-card span{display:block;margin-top:10px;color:#24131b;font-size:11px;font-weight:800;letter-spacing:.12em}
 .qr-url{display:block;margin-top:12px;color:var(--rose);font-size:12px;overflow-wrap:anywhere}
 @media(max-width:700px){.qr-section{grid-template-columns:1fr}.qr-card{width:min(100%,260px);margin:auto}}
-</style>
+
+/* PREMIUM RUBY CLUB REDESIGN */
+:root{--bg:#070507;--panel:#100a0e;--panel2:#1b0c14;--text:#fff8fa;--muted:#bbaab1;--line:#43202e;--red:#8d1238;--ruby:#e32659;--rose:#ffb3c7;--gold:#d6b27b;--max:1240px}
+body{background:#070507;color:var(--text);font-family:Inter,"Segoe UI",system-ui,sans-serif;letter-spacing:.005em}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 8% 12%,#4b0d2524,transparent 30%),radial-gradient(ellipse at 92% 65%,#740d2a18,transparent 28%)}
+header{background:#080508d9;border-bottom:1px solid #6b1b37;box-shadow:0 12px 45px #0008}
+.nav{height:82px}.brand{font-size:14px;letter-spacing:.19em}.brand-mark{width:46px;height:46px;background:radial-gradient(circle,#6c1833,#13070d 70%);border-color:#c23c65;box-shadow:0 0 18px #d51b5266,0 0 42px #9d164333}
+.links{gap:19px}.links a{font-size:11px;letter-spacing:.09em;text-transform:uppercase}.nav-cta{background:linear-gradient(120deg,#5f0c29,#a31643);border:1px solid #e24b78;box-shadow:0 0 22px #c21b4b30}
+.hero{min-height:790px;background:linear-gradient(90deg,#080508 0%,#0a0509d9 44%,#10050bd1 100%),radial-gradient(ellipse at 78% 50%,#9e123e9c,transparent 33%),radial-gradient(ellipse at 82% 75%,#e11d5438,transparent 35%),linear-gradient(135deg,#090609,#210b16)}
+.hero:before{width:min(62vw,760px);right:-7%;top:7%;border-color:#e94b772c;box-shadow:0 0 0 42px #b41d3d0b,0 0 0 90px #b41d3d09,0 0 100px #b5164a1a}
+.hero:after{width:min(43vw,510px);right:2%;top:21%;border-color:#f0a9bd26;box-shadow:inset 0 0 80px #ad16401c,0 0 65px #b5164a20}
+.hero-inner{max-width:900px;padding:130px 0}.eyebrow{color:#ff9eb9;font-size:10px;letter-spacing:.32em}.eyebrow:before{background:linear-gradient(90deg,#e3245c,#f7b5c8);width:42px}
+h1{font-size:clamp(64px,11vw,132px);letter-spacing:-.09em;text-shadow:0 8px 55px #d3164b28;margin:34px 0 28px}h1 span,.accent{color:#ff789e;text-shadow:0 0 28px #e51e5a35}
+.lead{font-size:clamp(17px,2vw,21px);line-height:1.7;color:#e0cbd2;max-width:650px}
+.btn{padding:16px 23px;background:linear-gradient(115deg,#7d0d34,#e32659 65%,#a91442);border:1px solid #ff7b9f;box-shadow:0 10px 35px #a10d3d30;letter-spacing:.1em}.btn:hover{box-shadow:0 14px 45px #e21c5a66;filter:brightness(1.13)}
+.btn.ghost{border-color:#9d3a59;background:#10080e99}.hero-meta{border-top:1px solid #7c294333;padding-top:24px;margin-top:55px;letter-spacing:.16em}
+section{padding:112px 0;border-bottom:1px solid #411b2a;background:linear-gradient(180deg,#080608,#0b070a)}
+section.dark{background:linear-gradient(180deg,#10080d,#080608)}
+.head{margin-bottom:52px}.title{font-size:clamp(40px,5.6vw,72px);letter-spacing:-.07em}.desc{font-size:15px;line-height:1.8;color:#c1adb6}
+.statement,.card,.gear,.event,.contact,.stat,.faq details,.sound-panel{border:1px solid #542137;background:linear-gradient(145deg,#1b0b13eF,#0e090d);box-shadow:0 18px 55px #0005}
+.statement{padding:46px;position:relative;overflow:hidden}.statement:after{content:"🍒";position:absolute;right:18px;bottom:-34px;font-size:120px;opacity:.08;filter:grayscale(.2)}
+.stat{transition:.3s}.stat strong{color:#ff85a5;text-shadow:0 0 20px #d61b4d35}
+.card,.gear,.event{position:relative;overflow:hidden}.card:before,.gear:before,.event:before{content:"";position:absolute;inset:0 auto 0 0;width:2px;background:linear-gradient(transparent,#e32659,transparent);opacity:.8}
+.card:hover,.gear:hover,.event:hover{transform:translateY(-7px);border-color:#d33a68;box-shadow:0 20px 55px #9b123b2b}
+.icon{font-size:29px;filter:drop-shadow(0 0 12px #ed376b55)}
+.screen{border:1px solid #a93b5d;padding:32px;background:radial-gradient(ellipse at 50% 45%,#9d164c88,transparent 55%),linear-gradient(140deg,#250b17,#080508 75%);box-shadow:0 25px 90px #a80d3a35,inset 0 0 50px #df22501a}
+.screen:after{inset:14px;border:1px solid #ffb6c72c}
+.wave i{background:linear-gradient(#ffb7ca,#e32659);box-shadow:0 0 14px #d91c5538}
+.tile{border:1px solid #713047;background:radial-gradient(ellipse at 50% 25%,#a3164445,transparent 58%),linear-gradient(145deg,#210d17,#090609);transition:.3s}.tile:hover{transform:translateY(-5px);border-color:#e34a78}
+.event{background:linear-gradient(145deg,#260d19,#0d080c)}
+.event small{color:#e9b6c5}
+.founder{color:#ff9ab5;text-shadow:0 0 30px #d71e5130}
+.phone{color:#ff91ad}
+.visit,.qr-section{border:1px solid #b02b55;background:radial-gradient(ellipse at 90% 0%,#9f164a55,transparent 50%),linear-gradient(120deg,#210b16,#0c070b);box-shadow:0 25px 90px #0008}
+.price{color:#ff8dab;text-shadow:0 0 26px #db1c5338}
+.qr-card{border:2px solid #ed5c83;box-shadow:0 18px 55px #0009,0 0 30px #d51a4a20}
+.faq details{transition:.25s}.faq details[open]{border-color:#d53b6b}
+footer{background:#070507;border-top:1px solid #552035}
+.reveal{transition:opacity .8s ease,transform .8s cubic-bezier(.2,.75,.2,1)}
+.menu{border-color:#8e3452}
+@media(max-width:700px){.hero{min-height:690px}.hero-inner{padding:95px 0}.nav{height:72px}.links{background:#0b060a;border-color:#70223e}.links a{padding:7px 0}.hero-meta{margin-top:40px}.statement{padding:30px}section{padding:82px 0}}
+@media(prefers-reduced-motion:no-preference){.hero-inner{animation:heroRise .9s ease both}.brand-mark{animation:cherryGlow 3s ease-in-out infinite alternate}.btn{transition:transform .25s,box-shadow .25s,filter .25s}}
+@keyframes heroRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes cherryGlow{from{box-shadow:0 0 12px #d51b5230}to{box-shadow:0 0 28px #e3265977,0 0 55px #9d164355}}
+\n</style>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="#home"><span class="brand-mark">🍒</span><span>ЗИМНЯЯ ВИШНЯ<small>ЗВУК · КИНО · ИГРЫ</small></span></a>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Меню ☰</button>
-<nav class="links" id="links" aria-label="Основная навигация"><a href="#about">О проекте</a><a href="#cinema">Кино и игры</a><a href="#equipment">Оборудование</a><a href="#sweet">Сладкая зона</a><a href="#events">Афиша</a><a href="#founder">Основатель</a><a class="nav-cta" href="#visit">Записаться</a></nav>
+<nav class="links" id="links" aria-label="Основная навигация"><a href="#about">О проекте</a><a href="#cinema">Кино и игры</a><a href="#equipment">Оборудование</a><a href="#sound">Звук</a><a href="#sweet">Сладкая зона</a><a href="#events">Афиша</a><a href="#founder">Основатель</a><a class="nav-cta" href="#visit">Записаться</a></nav>
 </div></header>
 <main id="home">
-<section class="hero"><div class="wrap hero-inner"><div class="eyebrow">Личное пространство · Алексеевка</div><h1>ЗВУК.<br><span>КИНО.</span><br>ЭМОЦИИ.</h1><p class="lead">«Зимняя Вишня» — пространство, где встречаются музыка, большой экран и видеоигры. Атмосфера, техника и впечатления в одном месте.</p><div class="actions"><a class="btn" href="#visit">ЗАПИСАТЬСЯ НА ПОСЕЩЕНИЕ ↗</a><a class="btn ghost" href="#about">ОТКРЫТЬ ПРОЕКТ</a></div><div class="hero-meta"><span><b>🍒</b> Авторский проект</span><span><b>99 ₽</b> стоимость посещения</span><span><b>Алексеевка</b> Белгородская область</span></div></div></section>
+<section class="hero"><div class="wrap hero-inner"><div class="eyebrow">PRIVATE EXPERIENCE · АЛЕКСЕЕВКА</div><h1>ЗВУК.<br><span>КИНО.</span><br>ЭМОЦИИ<span>.</span></h1><p class="lead">«Зимняя Вишня» — пространство, где встречаются музыка, большой экран и видеоигры. Атмосфера рубинового света, выразительного звука, большого экрана и игровых впечатлений. Своя история — в каждой детали.</p><div class="actions"><a class="btn" href="#visit">ЗАПИСАТЬСЯ НА ПОСЕЩЕНИЕ ↗</a><a class="btn ghost" href="#about">ОТКРЫТЬ ПРОЕКТ</a></div><div class="hero-meta"><span><b>🍒</b> Авторский проект</span><span><b>RUBY</b> Особая атмосфера</span><span><b>99 ₽</b> стоимость посещения</span><span><b>Алексеевка</b> Белгородская область</span></div></div></section>
 <section id="about"><div class="wrap"><div class="head"><div><div class="eyebrow">01 / Идея проекта</div><h2 class="title">Больше, чем просто<br><span class="accent">экран и колонки.</span></h2><p class="desc">«Зимняя Вишня» развивается как личное пространство для знакомства со звуком, кино и интерактивными развлечениями.</p></div><span class="num">О ПРОЕКТЕ</span></div><div class="about"><div class="statement"><h3>Своя атмосфера.<br>Свой звук. Своя история.</h3><p>В основе проекта — интерес к профессиональному звуку, акустике, кинотехнике и игровым системам. Пространство постепенно развивается и оснащается.</p></div><div class="stats"><div class="stat"><strong>99 ₽</strong><span>Стоимость одного посещения</span></div><div class="stat"><strong>🍒</strong><span>Фирменный символ проекта</span></div><div class="stat"><strong>Звук</strong><span>Акустика и аудиосистема</span></div><div class="stat"><strong>Кино</strong><span>Проектор и большой экран</span></div></div></div></div></section>
 <section class="dark" id="cinema"><div class="wrap"><div class="head"><div><div class="eyebrow">02 / Развлечения</div><h2 class="title">Погружение в кино<br>и <span class="accent">игры.</span></h2><p class="desc">Проектор, экран и PlayStation 4 Pro — визуальная часть проекта. Конкретная программа посещения согласуется заранее.</p></div><span class="num">ИЗОБРАЖЕНИЕ</span></div><div class="cinema"><div><div class="screen"><strong>СМОТРИ.<br>ИГРАЙ.<br><span class="accent">ПОГРУЖАЙСЯ.</span></strong></div><p class="screen-note">Стилизованная иллюстрация концепции экрана, не фотография помещения.</p></div><div class="cards" style="grid-template-columns:1fr"><article class="card"><div class="icon">▣</div><h3>Киноформат</h3><p>Просмотр видеоконтента через проектор и большой экран.</p></article><article class="card"><div class="icon">⌁</div><h3>Игровая зона</h3><p>PlayStation 4 Pro и игры на большом изображении.</p></article></div></div></div></section>
 <section id="equipment"><div class="wrap"><div class="head"><div><div class="eyebrow">03 / Техническая база</div><h2 class="title">Техника, которая<br><span class="accent">создаёт атмосферу.</span></h2><p class="desc">В каталоге указаны известные модели и типы оборудования проекта — без неподтверждённых характеристик.</p></div><span class="num">ОБОРУДОВАНИЕ</span></div><div class="gear-grid">
